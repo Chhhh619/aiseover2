@@ -1,0 +1,105 @@
+/* Footer Slogan - Ogaki Digital Style */
+.footer-slogan {
+    padding: var(--space-3xl) 0;
+    overflow: hidden;
+    border-top: 1px solid var(--border-light);
+    background: var(--bg-dark);
+}
+
+.slogan-text {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 400;
+    color: var(--text-white);
+    text-align: center;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: sloganSlideUp 1s ease-out forwards;
+    animation-play-state: paused;
+}
+
+/* Intersection Observer will trigger this */
+.footer-slogan.visible .slogan-text {
+    animation-play-state: running;
+}
+
+@keyframes sloganSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Footer */
+.footer {
+    background: var(--bg-dark);
+}
+
+.footer-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-logo {
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.footer-location {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 300;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--text-white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-lg);
+    }
+
+    .slogan-text {
+        font-size: clamp(2rem, 8vw, 4rem);
+    }
+}

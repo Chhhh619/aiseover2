@@ -1,0 +1,138 @@
+.hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Video Background - Raw with minimal overlay */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Subtle gradient overlay - keeps video raw while text readable */
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.25) 0%,
+            rgba(0, 0, 0, 0.1) 40%,
+            rgba(0, 0, 0, 0.2) 100%);
+}
+
+/* Content Wrapper - Integrated Biosciences Layout */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: calc(100px + var(--space-2xl)) var(--space-2xl) var(--space-2xl);
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Large Headline - Top Left */
+.hero-headline {
+    padding-top: var(--space-xl);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--text-white);
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Bottom Row - Flex Layout */
+.hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-xl);
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 400px;
+    text-shadow: 0 1px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* CTA Button - Integrated Biosciences Style */
+.hero-cta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgba(200, 255, 200, 0.9);
+    color: var(--bg-dark);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.hero-cta:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+
+.cta-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--bg-dark);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-content-wrapper {
+        padding: calc(80px + var(--space-xl)) var(--space-md) var(--space-md);
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-description {
+        max-width: none;
+    }
+
+    .hero-cta {
+        align-self: flex-start;
+    }
+}

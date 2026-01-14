@@ -1,0 +1,265 @@
+/* ===================================
+   CARI SEO - Global Styles
+   ChatDaddy-style Design
+   Blue: #225cae, Dark gradients
+   Font: Aspekta (Integrated Biosciences style)
+   =================================== */
+
+/* Aspekta Font (similar to Integrated Biosciences) */
+@import url('https://api.fontshare.com/v2/css?f[]=aspekta@100,200,300,400,500,600,700,800,900&display=swap');
+
+/* Google Fonts Fallback */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* CSS Variables */
+:root {
+  /* Brand Colors */
+  --primary: #225cae;
+  --primary-dark: #1a4a8a;
+  --primary-light: #3a7ed4;
+  --primary-gradient: linear-gradient(135deg, #1a4a8a 0%, #225cae 50%, #2d6bc4 100%);
+
+  /* Backgrounds */
+  --bg-dark: #0f1b2d;
+  --bg-dark-gradient: linear-gradient(180deg, #0f1b2d 0%, #1a3050 50%, #225cae 100%);
+  --bg-white: #ffffff;
+  --bg-light: #f0f5ff;
+  --bg-card: rgba(255, 255, 255, 0.95);
+
+  /* Text Colors */
+  --text-white: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-dark: #1a1a2e;
+  --text-body: #4b5563;
+
+  /* Functional */
+  --success: #22c55e;
+  --danger: #ef4444;
+  --gold: #fbbf24;
+  --border-light: rgba(255, 255, 255, 0.15);
+  --border-dark: #e5e7eb;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 40px rgba(34, 92, 174, 0.3);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Aspekta', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container-wide {
+  max-width: 1400px;
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+/* Section Base - Dark Theme */
+.section {
+  padding: var(--space-3xl) 0;
+  position: relative;
+}
+
+.section-dark {
+  background: var(--bg-dark);
+}
+
+.section-gradient {
+  background: var(--bg-dark-gradient);
+}
+
+.section-light {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: var(--space-sm);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-title-white {
+  color: var(--text-white);
+}
+
+.section-title-dark {
+  color: var(--text-dark);
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+/* Buttons - ChatDaddy Style */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--text-dark);
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(251, 191, 36, 0.5);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-white);
+  border: 2px solid var(--border-light);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--text-white);
+}
+
+.btn-white {
+  background: white;
+  color: var(--primary);
+}
+
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Lists */
+.check-list {
+  list-style: none;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.check-list .icon {
+  color: var(--success);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.x-list li .icon {
+  color: var(--danger);
+}
+
+/* Cards - ChatDaddy Style */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  color: var(--text-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glassmorphism Shapes */
+.glass-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}

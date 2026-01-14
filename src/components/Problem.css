@@ -1,0 +1,45 @@
+.problem-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.problem-list {
+    list-style: none;
+    margin-bottom: var(--space-lg);
+}
+
+.problem-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    font-size: 1.25rem;
+    color: var(--text-dark);
+}
+
+.problem-list .icon {
+    color: var(--danger);
+    font-weight: 700;
+    font-size: 1.125rem;
+    width: 28px;
+    height: 28px;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bold-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.6;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-dark);
+}

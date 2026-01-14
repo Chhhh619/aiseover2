@@ -1,0 +1,126 @@
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: var(--bg-card);
+    border: 2px solid transparent;
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    position: relative;
+    transition: all 0.3s ease;
+    color: var(--text-dark);
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.2);
+}
+
+.featured-label {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--text-dark);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pricing-name {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: var(--space-sm);
+}
+
+.pricing-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: var(--space-sm);
+}
+
+.pricing-price .currency {
+    font-size: 1.25rem;
+    color: var(--text-body);
+    font-weight: 500;
+}
+
+.pricing-price .amount {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.pricing-tagline {
+    text-align: center;
+    color: var(--text-body);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: var(--space-lg);
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs) 0;
+    color: var(--text-dark);
+}
+
+.pricing-features .icon {
+    color: var(--success);
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+}
+
+.guarantee-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 1px solid #bbf7d0;
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    font-size: 0.875rem;
+    color: #166534;
+}
+
+.guarantee-icon {
+    font-size: 1.75rem;
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}

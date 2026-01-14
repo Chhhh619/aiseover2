@@ -1,0 +1,29 @@
+.trust-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--bg-white);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: transform 0.2s ease;
+}
+
+.trust-item:hover {
+    transform: scale(1.05);
+}
+
+.trust-icon {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,112 @@
+/* Tab Navigation - Cleverus Style */
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: var(--bg-white);
+    border: 2px solid var(--border-dark);
+    border-radius: var(--radius-full);
+    padding: var(--space-sm) var(--space-lg);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-body);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.tab-number {
+    white-space: nowrap;
+}
+
+/* Tab Content */
+.tab-content {
+    background: var(--bg-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-md);
+}
+
+.tab-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.tab-description {
+    font-size: 1.125rem;
+    color: var(--text-body);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Mobile Swipe Dots */
+.swipe-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-lg);
+}
+
+.swipe-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--border-dark);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.swipe-dot.active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .tabs-nav {
+        display: none;
+    }
+
+    .tab-content {
+        padding: var(--space-lg);
+    }
+}

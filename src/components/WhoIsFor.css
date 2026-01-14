@@ -1,0 +1,24 @@
+.who-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    max-width: 500px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.who-list {
+    list-style: none;
+}
+
+.who-list li {
+    padding: var(--space-sm) 0;
+    font-size: 1.25rem;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.who-list li:last-child {
+    border-bottom: none;
+}
