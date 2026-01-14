@@ -4,8 +4,9 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: var(--space-md) 0;
+    padding: var(--space-sm) 0;
     transition: all 0.4s ease;
+    overflow: visible;
 }
 
 .navbar-container {
@@ -159,10 +160,14 @@
     }
 
     .logo-img {
-        height: 36px;
+        height: 45px;
+    }
+
+    .logo-pill {
+        padding: var(--space-xs) var(--space-sm);
     }
 
     .navbar-container {
-        padding: 0 var(--space-md);
+        padding: 0 var(--space-sm);
     }
 }
