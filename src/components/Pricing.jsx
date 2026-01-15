@@ -1,9 +1,12 @@
+import { useModal } from '../context/ModalContext'
 import './Pricing.css'
 
 function Pricing() {
-    const scrollToContact = (e) => {
+    const { openContactModal } = useModal()
+
+    const handleGetStarted = (e) => {
         e.preventDefault()
-        document.getElementById('consultation-section')?.scrollIntoView({ behavior: 'smooth' })
+        openContactModal()
     }
 
     const packages = [
@@ -67,13 +70,12 @@ function Pricing() {
                                 <span className="guarantee-icon">🛡️</span>
                                 <span>100% Money-Back Guarantee<br />No questions asked</span>
                             </div>
-                            <a
-                                href="#consultation-section"
-                                onClick={scrollToContact}
+                            <button
+                                onClick={handleGetStarted}
                                 className={`btn ${pkg.featured ? 'btn-primary' : 'btn-white'} btn-full`}
                             >
                                 Get Started
-                            </a>
+                            </button>
                         </div>
                     ))}
                 </div>

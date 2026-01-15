@@ -1,9 +1,12 @@
+import { useModal } from '../context/ModalContext'
 import './Hero.css'
 
 function Hero() {
-    const scrollToConsultation = (e) => {
+    const { openContactModal } = useModal()
+
+    const handleCTAClick = (e) => {
         e.preventDefault()
-        document.getElementById('consultation-section')?.scrollIntoView({ behavior: 'smooth' })
+        openContactModal()
     }
 
     return (
@@ -32,13 +35,12 @@ function Hero() {
                             AI SEO content built for SMEs.
                         </p>
                         <div className="hero-cta-wrapper">
-                            <a
-                                href="#consultation-section"
-                                onClick={scrollToConsultation}
+                            <button
+                                onClick={handleCTAClick}
                                 className="btn btn-primary btn-lg"
                             >
                                 Let Us Review Your Website
-                            </a>
+                            </button>
                         </div>
                         <p className="trust-sub">Cancel anytime. Full refund. No questions asked.</p>
                     </div>

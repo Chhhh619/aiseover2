@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useModal } from '../context/ModalContext'
 import './Navbar.css'
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const { openContactModal } = useModal()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,8 +24,9 @@ function Navbar() {
         setMobileMenuOpen(false)
     }
 
-    const scrollToConsultation = (e) => {
-        scrollToSection(e, 'consultation-section')
+    const handleGetStarted = (e) => {
+        e.preventDefault()
+        openContactModal()
     }
 
     return (
@@ -42,13 +45,12 @@ function Navbar() {
                     </div>
 
                     <div className="navbar-actions">
-                        <a
-                            href="#consultation-section"
-                            onClick={scrollToConsultation}
+                        <button
+                            onClick={handleGetStarted}
                             className="btn btn-primary"
                         >
                             Get Started
-                        </a>
+                        </button>
                         <button
                             className={`navbar-toggle ${mobileMenuOpen ? 'active' : ''}`}
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
