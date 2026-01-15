@@ -98,6 +98,20 @@
     font-weight: 700;
 }
 
+.solution-cta {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .solution-cta {
+        display: inline-block;
+        margin-top: var(--space-lg);
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
 /* Image Container with Enhanced Effects */
 .solution-visual {
     position: relative;
@@ -244,11 +258,11 @@
     }
 
     .solution-content {
-        order: 2;
+        order: 1;
     }
 
     .solution-visual {
-        order: 1;
+        order: 2;
         display: flex;
         justify-content: center;
     }

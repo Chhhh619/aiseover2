@@ -1,6 +1,8 @@
+import { useModal } from '../context/ModalContext'
 import './WhoIsFor.css'
 
 function WhoIsFor() {
+    const { openContactModal } = useModal()
     const items = [
         'You want inbound leads',
         'You sell services or expertise',
@@ -23,6 +25,12 @@ function WhoIsFor() {
                             <li key={index}><span className="check-icon">✓</span> {item}</li>
                         ))}
                     </ul>
+                    <button
+                        onClick={openContactModal}
+                        className="btn btn-primary who-cta"
+                    >
+                        See If You Qualify
+                    </button>
                 </div>
             </div>
         </section>

@@ -31,3 +31,21 @@
     color: #3b82f6;
     font-weight: 700;
 }
+
+.who-cta {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .who-cta {
+        display: block;
+        width: 100%;
+        margin-top: var(--space-lg);
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .who-list li {
+        font-size: 1rem;
+    }
+}

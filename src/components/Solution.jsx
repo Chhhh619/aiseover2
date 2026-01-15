@@ -1,6 +1,8 @@
+import { useModal } from '../context/ModalContext'
 import './Solution.css'
 
 function Solution() {
+    const { openContactModal } = useModal()
     const results = [
         'Appear in ChatGPT, Perplexity, and AI search results',
         'Drive qualified traffic from AI platforms',
@@ -33,6 +35,13 @@ function Solution() {
                             This is <strong>not</strong> traditional SEO.<br />
                             This is <strong>AI SEO for the future of search</strong>.
                         </p>
+
+                        <button
+                            onClick={openContactModal}
+                            className="btn btn-primary solution-cta"
+                        >
+                            Get Started Today
+                        </button>
                     </div>
 
                     {/* Right Column - Enhanced Image Display */}
