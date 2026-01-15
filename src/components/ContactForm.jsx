@@ -37,7 +37,7 @@ function ContactForm() {
     return (
         <div className="contact-wrapper" id="consultation-section">
             <div className="container container-narrow">
-                <h2 className="section-title section-title-white">Start with a Free AI <span className="seo-highlight">SEO</span> Assessment</h2>
+                <h2 className="section-title section-title-white">Ready to start your AI <span className="seo-highlight">SEO</span> journey?</h2>
                 <p className="section-subtitle">
                     We review your website and show how AI SEO can help.
                 </p>

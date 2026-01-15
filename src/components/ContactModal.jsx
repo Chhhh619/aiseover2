@@ -70,7 +70,7 @@ function ContactModal() {
                 </button>
 
                 <div className="modal-content">
-                    <h2 className="modal-title">Start with a Free AI <span className="seo-highlight">SEO</span> Assessment</h2>
+                    <h2 className="modal-title">Ready to start your AI <span className="seo-highlight">SEO</span> journey?</h2>
                     <p className="modal-subtitle">
                         We review your website and show how AI SEO can help.
                     </p>
