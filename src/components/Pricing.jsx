@@ -8,26 +8,27 @@ function Pricing() {
 
     const packages = [
         {
-            name: 'Starter Package',
-            price: '1,500',
-            tagline: 'Best for SMEs starting with AI SEO',
+            name: 'Individual',
+            price: '2,000',
+            tagline: 'For solopreneurs and small teams',
             features: [
-                'Login access to content platform',
-                '5 SEO-optimized articles',
-                'Built for AI SEO visibility',
-                'Ready to publish'
+                '10 SEO-optimized articles',
+                'AI-powered keyword research',
+                'Content ready to publish',
+                'Email support'
             ],
             featured: false
         },
         {
-            name: 'Growth Package',
-            price: '6,000',
-            tagline: 'Best for businesses serious about ranking',
+            name: 'Enterprise',
+            price: '7,000',
+            tagline: 'For growing businesses ready to scale',
             features: [
-                'Login access to content platform',
-                '30 SEO-optimized articles',
-                'Strong topical authority',
-                'Long-term organic growth'
+                '50 SEO-optimized articles',
+                'Advanced keyword strategy',
+                'Priority content delivery',
+                'Dedicated account manager',
+                'Monthly performance report'
             ],
             featured: true
         }

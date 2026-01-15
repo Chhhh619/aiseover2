@@ -4,15 +4,15 @@ function Problem() {
     const problems = [
         {
             icon: '✕',
-            text: 'Google does not rank it'
+            text: 'Search behavior has changed. Users now get answers from AI summaries'
         },
         {
             icon: '✕',
-            text: 'Website traffic stays low'
+            text: 'Google rankings do not guarantee clicks anymore. Visibility does not always translate into traffic'
         },
         {
             icon: '✕',
-            text: "Not built for Google's AI-powered search"
+            text: 'Customers expect instant answers, not just links to browse'
         }
     ]
 
@@ -20,7 +20,7 @@ function Problem() {
         <section className="section section-problem" id="problem">
             <div className="container container-narrow">
                 <h2 className="section-title section-title-dark">
-                    Why Most Business Content Does Not Work
+                    Why ranking on Google alone is no longer enough
                 </h2>
 
                 <ul className="problem-list">

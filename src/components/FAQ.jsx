@@ -6,24 +6,24 @@ function FAQ() {
 
     const faqs = [
         {
-            question: 'What is AI SEO?',
-            answer: 'AI SEO combines artificial intelligence with search engine optimization to create content that ranks on Google. We use AI to analyze search patterns, understand intent, and structure content that both Google and users love.'
+            question: 'What is AI SEO and how is it different from traditional SEO?',
+            answer: 'AI SEO optimizes your content to appear in AI-powered search results like ChatGPT, Perplexity, and Google AI Overviews. While traditional SEO focuses on ranking in search results, AI SEO ensures your content is featured in AI summaries and recommendations where users increasingly find answers.'
         },
         {
             question: 'How long does it take to see results?',
-            answer: 'SEO is a long-term strategy. Most businesses start seeing improvements in rankings within 2-3 months, with significant results in 4-6 months. The content we create continues working for you long after publication.'
+            answer: 'Most businesses start seeing improvements in AI visibility within 4-8 weeks. However, building strong authority with AI platforms is an ongoing process. The content we create continues to build your presence over time.'
+        },
+        {
+            question: 'What is the difference between Individual and Enterprise packages?',
+            answer: 'The Individual package (RM 2,000) includes 10 SEO-optimized articles with AI-powered keyword research, perfect for solopreneurs and small teams. The Enterprise package (RM 7,000) includes 50 articles with advanced keyword strategy, priority delivery, and a dedicated account manager for growing businesses.'
         },
         {
             question: "What's included in the money-back guarantee?",
-            answer: "If you're not satisfied with the quality of the SEO content we deliver, you can request a full refund. No questions asked. We're confident in our work and want you to be too."
+            answer: "If you're not satisfied with the quality of our AI SEO content, you can request a full refund within 14 days. No questions asked. We're confident in our work and want you to be too."
         },
         {
-            question: 'Do I need technical SEO knowledge?',
-            answer: 'No. We handle all the technical aspects of SEO content creation. You just need to understand your business and customers – we take care of the rest.'
-        },
-        {
-            question: 'How is this different from regular content writing?',
-            answer: "Regular content writing focuses on creating readable text. AI SEO content is strategically built to rank on Google – it's researched, structured, and optimized for both search engines and AI-powered search results."
+            question: 'Do I need to be technical to use CariSEO?',
+            answer: 'Not at all. We handle all the technical aspects of AI SEO optimization. You just need to understand your business and target audience – we take care of the rest, including keyword research, content structuring, and AI optimization.'
         }
     ]
 

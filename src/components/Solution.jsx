@@ -2,16 +2,16 @@ import './Solution.css'
 
 function Solution() {
     const features = [
-        'AI-powered keyword research',
-        'Real search intent analysis',
-        'SEO-structured content',
-        'Human business understanding'
+        'Optimize your content for AI-powered search engines',
+        'Get featured in AI summaries and recommendations',
+        'Build authority that AI platforms trust',
+        'Create content that answers user questions directly'
     ]
 
     const results = [
-        'Matches what customers are searching for',
-        'Ranks higher on Google',
-        'Built for AI-powered search visibility'
+        'Appear in ChatGPT, Perplexity, and AI search results',
+        'Drive qualified traffic from AI platforms',
+        'Future-proof your SEO strategy'
     ]
 
     return (
@@ -21,7 +21,7 @@ function Solution() {
                     {/* Left Column - Text */}
                     <div className="solution-content">
                         <h2 className="solution-title">
-                            What Is AI <span className="highlight-blue">SEO</span> Content Creation?
+                            CariSEO helps you get found where your customers are searching
                         </h2>
 
                         <ul className="solution-features">
@@ -46,8 +46,8 @@ function Solution() {
                         </div>
 
                         <p className="solution-closing">
-                            This is <strong>not</strong> generic AI writing.<br />
-                            This is <strong>AI SEO built for business growth</strong>.
+                            This is <strong>not</strong> traditional SEO.<br />
+                            This is <strong>AI SEO for the future of search</strong>.
                         </p>
                     </div>
 

@@ -2,21 +2,23 @@ import './WhatYouGet.css'
 
 function WhatYouGet() {
     const items = [
-        { icon: '📄', text: 'SEO-optimized articles' },
-        { icon: '🤖', text: 'Content built for AI-powered search' },
-        { icon: '🎯', text: 'Clear lead-focused structure' },
-        { icon: '📈', text: 'Long-term organic assets' }
+        { icon: '✓', text: 'AI-optimized content strategy' },
+        { icon: '✓', text: 'Keyword research for AI platforms' },
+        { icon: '✓', text: 'Content formatted for AI summaries' },
+        { icon: '✓', text: 'Regular performance tracking' },
+        { icon: '✓', text: 'Dedicated support team' },
+        { icon: '✓', text: 'Monthly optimization updates' }
     ]
 
     return (
         <section className="section section-light" id="whatyouget">
             <div className="container">
-                <h2 className="section-title section-title-dark">Everything You Need for AI <span className="seo-highlight">SEO</span></h2>
-                <div className="features-grid">
+                <h2 className="section-title section-title-dark">What's Included</h2>
+                <div className="checklist-grid">
                     {items.map((item, index) => (
-                        <div key={index} className="feature-card">
-                            <span className="feature-icon">{item.icon}</span>
-                            <span className="feature-text">{item.text}</span>
+                        <div key={index} className="checklist-item">
+                            <span className="checklist-icon">{item.icon}</span>
+                            <span className="checklist-text">{item.text}</span>
                         </div>
                     ))}
                 </div>

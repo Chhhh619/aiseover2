@@ -40,13 +40,7 @@ function Hero() {
                                 👉 Let Us Review Your Website
                             </a>
                         </div>
-                        <div className="hero-trust">
-                            <div className="trust-badge">
-                                <span className="trust-icon">✓</span>
-                                <span>Simple. Transparent. Money-Back Guarantee.</span>
-                            </div>
-                            <p className="trust-sub">Cancel anytime. Full refund. No questions asked.</p>
-                        </div>
+                        <p className="trust-sub">Cancel anytime. Full refund. No questions asked.</p>
                     </div>
 
                     {/* Right Column - Visual */}

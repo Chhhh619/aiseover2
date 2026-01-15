@@ -31,11 +31,11 @@
 
 .hero-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.15;
+    font-weight: 900;
+    line-height: 1.1;
     margin-bottom: var(--space-md);
     color: var(--text-white);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
 }
 
 .hero-title .highlight {

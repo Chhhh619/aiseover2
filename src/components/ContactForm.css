@@ -116,6 +116,60 @@
     margin-top: var(--space-xs);
 }
 
+/* Package Selection */
+.package-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.package-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.package-option:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.package-option.selected {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.package-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+.package-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.package-name {
+    font-weight: 600;
+    color: var(--text-white);
+    font-size: 1rem;
+}
+
+.package-price {
+    font-size: 0.875rem;
+    color: var(--gold);
+    font-weight: 500;
+}
+
 .success-message {
     background: rgba(34, 197, 94, 0.1);
     /* Green Glass */
@@ -170,5 +224,9 @@
     .form-group textarea {
         font-size: 16px;
         /* Prevents iOS zoom */
+    }
+
+    .package-selection {
+        grid-template-columns: 1fr;
     }
 }

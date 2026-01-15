@@ -2,17 +2,17 @@ import './Trust.css'
 
 function Trust() {
     const items = [
-        { icon: '🤖', text: 'Strong AI and automation expertise' },
-        { icon: '🌏', text: 'Local Malaysia and SEA knowledge' },
-        { icon: '🏢', text: 'Built specifically for SMEs' },
-        { icon: '💰', text: 'Transparent pricing' },
-        { icon: '🎯', text: 'SEO strategy first' }
+        { icon: '🤖', text: 'AI-first approach to SEO' },
+        { icon: '🌏', text: 'Deep understanding of Malaysian market' },
+        { icon: '🏢', text: 'Tailored for SMEs and enterprises' },
+        { icon: '💰', text: '100% money-back guarantee' },
+        { icon: '🎯', text: 'Results-driven strategy' }
     ]
 
     return (
         <section className="section section-light" id="trust">
             <div className="container">
-                <h2 className="section-title section-title-dark">Why Businesses Choose Mampu AI</h2>
+                <h2 className="section-title section-title-dark">Why Businesses Choose CariSEO</h2>
                 <div className="trust-grid">
                     {items.map((item, index) => (
                         <div key={index} className="trust-item">
