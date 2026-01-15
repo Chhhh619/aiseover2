@@ -15,7 +15,7 @@ function Pricing() {
             price: '2,000',
             tagline: 'For solopreneurs and small teams',
             features: [
-                '10 SEO-optimized articles',
+                '50 SEO-optimized articles',
                 'AI-powered keyword research',
                 'Content ready to publish',
                 'Email support'
@@ -26,8 +26,9 @@ function Pricing() {
             name: 'Enterprise',
             price: '7,000',
             tagline: 'For growing businesses ready to scale',
+            bonus: '+500 Bonus Articles Included',
             features: [
-                '50 SEO-optimized articles',
+                '500 SEO-optimized articles',
                 'Advanced keyword strategy',
                 'Priority content delivery',
                 'Dedicated account manager',
@@ -58,6 +59,12 @@ function Pricing() {
                                 <span className="amount">{pkg.price}</span>
                             </div>
                             <p className="pricing-tagline">{pkg.tagline}</p>
+                            {pkg.bonus && (
+                                <div className="pricing-bonus">
+                                    <span className="bonus-icon">🎁</span>
+                                    <span>{pkg.bonus}</span>
+                                </div>
+                            )}
                             <ul className="pricing-features">
                                 {pkg.features.map((feature, i) => (
                                     <li key={i}>
