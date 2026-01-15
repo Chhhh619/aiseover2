@@ -5,6 +5,7 @@
     gap: var(--space-md);
     max-width: 900px;
     margin: 0 auto;
+    margin-top: var(--space-2xl);
 }
 
 .trust-item {

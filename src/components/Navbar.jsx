@@ -2,56 +2,63 @@ import { useState, useEffect } from 'react'
 import './Navbar.css'
 
 function Navbar() {
-    const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
-            // Change logo and style when scrolled past hero section
-            setScrolled(window.scrollY > 100)
+            setScrolled(window.scrollY > 50)
         }
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const scrollToContact = (e) => {
+    const scrollToSection = (e, sectionId) => {
         e.preventDefault()
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-        setIsOpen(false)
+        const element = document.getElementById(sectionId)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+        setMobileMenuOpen(false)
+    }
+
+    const scrollToConsultation = (e) => {
+        scrollToSection(e, 'consultation-section')
     }
 
     return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-            <div className="navbar-container">
-                <a href="#" className="nav-pill logo-pill">
-                    <img
-                        src={scrolled ? "/images/cariSeo_background.png" : "/images/cariSeo_text.png"}
-                        alt="CariSEO by Mampu AI"
-                        className="logo-img"
-                    />
-                </a>
-
-                {/* CTA Pill */}
-                <a href="#contact" onClick={scrollToContact} className="nav-pill cta-pill">
-                    Get Started
-                </a>
-
-                {/* Mobile Menu Button */}
-                <button
-                    className={`hamburger hide-desktop ${isOpen ? 'active' : ''}`}
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                {/* Mobile Menu */}
-                <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-                    <a href="#contact" onClick={scrollToContact} className="btn btn-primary btn-full">
-                        Get Started
+        <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+            <div className="container">
+                <div className="navbar-content">
+                    <a href="#" className="navbar-logo" onClick={(e) => scrollToSection(e, 'hero')}>
+                        <img src="/images/cariSeo_text.png" alt="CariSEO by Mampu AI" className="logo-image" />
                     </a>
+
+                    <div className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
+                        <a href="#hero" onClick={(e) => scrollToSection(e, 'hero')}>Home</a>
+                        <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>How It Works</a>
+                        <a href="#pricing" onClick={(e) => scrollToSection(e, 'pricing')}>Pricing</a>
+                        <a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a>
+                    </div>
+
+                    <div className="navbar-actions">
+                        <a
+                            href="#consultation-section"
+                            onClick={scrollToConsultation}
+                            className="btn btn-primary"
+                        >
+                            Get Started
+                        </a>
+                        <button
+                            className={`navbar-toggle ${mobileMenuOpen ? 'active' : ''}`}
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>

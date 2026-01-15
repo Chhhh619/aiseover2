@@ -3,7 +3,7 @@ import './Pricing.css'
 function Pricing() {
     const scrollToContact = (e) => {
         e.preventDefault()
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+        document.getElementById('consultation-section')?.scrollIntoView({ behavior: 'smooth' })
     }
 
     const packages = [
@@ -34,8 +34,14 @@ function Pricing() {
     ]
 
     return (
-        <section className="section section-dark" id="pricing">
-            <div className="container">
+        <section className="section section-dark" id="pricing" style={{background: 'linear-gradient(180deg, #1e293b 0%, #0f172a 100%)', position: 'relative', overflow: 'hidden'}}>
+            {/* Decorative Shapes */}
+            <div className="floating-shapes">
+                <div className="shape-cube" style={{ top: '15%', left: '5%' }}></div>
+                <div className="shape-cube" style={{ bottom: '20%', right: '8%' }}></div>
+                <div className="shape-cube" style={{ top: '60%', left: '85%', width: '60px', height: '60px' }}></div>
+            </div>
+            <div className="container" style={{position: 'relative', zIndex: 5}}>
                 <h2 className="section-title section-title-white">Simple, Transparent Pricing</h2>
                 <p className="section-subtitle">No hidden fees. No long-term contracts.</p>
                 <div className="pricing-grid">
@@ -61,7 +67,7 @@ function Pricing() {
                                 <span>100% Money-Back Guarantee<br />No questions asked</span>
                             </div>
                             <a
-                                href="#contact"
+                                href="#consultation-section"
                                 onClick={scrollToContact}
                                 className={`btn ${pkg.featured ? 'btn-primary' : 'btn-white'} btn-full`}
                             >

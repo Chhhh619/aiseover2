@@ -5,6 +5,7 @@
     padding: var(--space-xl);
     max-width: 500px;
     margin: 0 auto;
+    margin-top: var(--space-2xl);
     backdrop-filter: blur(10px);
 }
 
@@ -13,6 +14,9 @@
 }
 
 .who-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
     padding: var(--space-sm) 0;
     font-size: 1.25rem;
     color: var(--text-light);
@@ -21,4 +25,9 @@
 
 .who-list li:last-child {
     border-bottom: none;
+}
+
+.who-list .check-icon {
+    color: #3b82f6;
+    font-weight: 700;
 }

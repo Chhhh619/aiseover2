@@ -4,6 +4,7 @@
     gap: var(--space-lg);
     max-width: 1000px;
     margin: 0 auto;
+    margin-top: var(--space-2xl);
 }
 
 .feature-card {
