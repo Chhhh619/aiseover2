@@ -28,7 +28,7 @@ function Footer() {
             {/* Flowing Slogan - Ogaki Digital style */}
             <div className="footer-slogan" ref={sloganRef}>
                 <h2 className="slogan-text">
-                    Rank Up, with Cari<span className="seo-highlight">SEO</span>
+                    Rank Up, with Cari<span className="seo-highlight">SEO.</span>
                 </h2>
             </div>
 

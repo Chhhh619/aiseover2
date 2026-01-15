@@ -66,9 +66,9 @@
 
 .solution-results li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-sm);
-    padding: var(--space-xs) 0;
+    padding: var(--space-sm) 0;
     font-size: 1rem;
     color: var(--text-body);
 }
@@ -76,8 +76,15 @@
 .result-icon {
     color: var(--success);
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: rgba(34, 197, 94, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .solution-closing {
@@ -211,7 +218,7 @@
 
 .solution-image {
     width: 100%;
-    max-width: 320px;
+    max-width: 420px;
     height: auto;
     border-radius: var(--radius-xl);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
