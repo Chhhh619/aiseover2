@@ -56,7 +56,7 @@
 }
 
 .hero-cta-wrapper {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md);
 }
 
 .hero-cta-wrapper .btn {
@@ -94,7 +94,6 @@
 .trust-sub {
     color: var(--text-muted);
     font-size: 0.9375rem;
-    padding-left: calc(24px + var(--space-xs));
 }
 
 /* Hero Visual */
@@ -287,7 +286,6 @@
     }
 
     .trust-sub {
-        padding-left: 0;
         text-align: center;
     }
 

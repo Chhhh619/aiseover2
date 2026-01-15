@@ -79,6 +79,12 @@
     box-sizing: border-box;
 }
 
+.form-group textarea {
+    resize: none;
+    width: 100%;
+    min-height: 100px;
+}
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: rgba(255, 255, 255, 0.4);

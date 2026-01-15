@@ -57,16 +57,6 @@ function Hero() {
                             <div className="metrics-progress">
                                 <div className="progress-bar"></div>
                             </div>
-                            <div className="metrics-details">
-                                <div className="metric-item">
-                                    <span className="metric-icon">📈</span>
-                                    <span className="metric-text">Rankings Improving</span>
-                                </div>
-                                <div className="metric-item">
-                                    <span className="metric-icon">🎯</span>
-                                    <span className="metric-text">12 keywords in top 10</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

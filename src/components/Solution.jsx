@@ -1,13 +1,6 @@
 import './Solution.css'
 
 function Solution() {
-    const features = [
-        'Optimize your content for AI-powered search engines',
-        'Get featured in AI summaries and recommendations',
-        'Build authority that AI platforms trust',
-        'Create content that answers user questions directly'
-    ]
-
     const results = [
         'Appear in ChatGPT, Perplexity, and AI search results',
         'Drive qualified traffic from AI platforms',
@@ -23,15 +16,6 @@ function Solution() {
                         <h2 className="solution-title">
                             CariSEO helps you get found where your customers are searching
                         </h2>
-
-                        <ul className="solution-features">
-                            {features.map((feature, index) => (
-                                <li key={index}>
-                                    <span className="feature-icon">🔹</span>
-                                    <span>{feature}</span>
-                                </li>
-                            ))}
-                        </ul>
 
                         <div className="solution-results">
                             <h3>What You Get:</h3>
@@ -51,14 +35,28 @@ function Solution() {
                         </p>
                     </div>
 
-                    {/* Right Column - Image */}
+                    {/* Right Column - Enhanced Image Display */}
                     <div className="solution-visual">
-                        <div className="solution-image-wrapper">
-                            <img
-                                src="/images/solutions.png"
-                                alt="AI SEO content creation process"
-                                className="solution-image"
-                            />
+                        <div className="solution-image-container">
+                            {/* Decorative elements */}
+                            <div className="image-glow"></div>
+                            <div className="image-ring image-ring-1"></div>
+                            <div className="image-ring image-ring-2"></div>
+                            <div className="floating-badge badge-top">
+                                <span className="badge-icon">🤖</span>
+                                <span>AI-Powered</span>
+                            </div>
+                            <div className="floating-badge badge-bottom">
+                                <span className="badge-icon">📈</span>
+                                <span>+340% Traffic</span>
+                            </div>
+                            <div className="solution-image-wrapper">
+                                <img
+                                    src="/images/solutions.png"
+                                    alt="AI SEO content creation process"
+                                    className="solution-image"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
