@@ -34,7 +34,11 @@ function Navbar() {
             <div className="container">
                 <div className="navbar-content">
                     <a href="#" className="navbar-logo" onClick={(e) => scrollToSection(e, 'hero')}>
-                        <img src="/images/cariSeo_text.png" alt="CariSEO by Mampu AI" className="logo-image" />
+                        <img
+                            src={scrolled ? "/images/cariSeo_background.png" : "/images/cariSeo_text.png"}
+                            alt="CariSEO by Mampu AI"
+                            className="logo-image"
+                        />
                     </a>
 
                     <div className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>

@@ -415,25 +415,25 @@ body {
 }
 
 .shape-1 {
-  width: 400px;
-  height: 400px;
+  width: min(400px, 50vw);
+  height: min(400px, 50vw);
   background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
-  top: -100px;
-  right: -100px;
+  top: -10%;
+  right: -10%;
 }
 
 .shape-2 {
-  width: 300px;
-  height: 300px;
+  width: min(300px, 40vw);
+  height: min(300px, 40vw);
   background: radial-gradient(circle, rgba(96, 165, 250, 0.25) 0%, transparent 70%);
-  bottom: -50px;
-  left: -50px;
+  bottom: -5%;
+  left: -5%;
   animation-delay: -7s;
 }
 
 .shape-3 {
-  width: 200px;
-  height: 200px;
+  width: min(200px, 30vw);
+  height: min(200px, 30vw);
   background: radial-gradient(circle, rgba(147, 197, 253, 0.2) 0%, transparent 70%);
   top: 40%;
   left: 20%;
@@ -442,8 +442,8 @@ body {
 
 .shape-cube {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: min(80px, 15vw);
+  height: min(80px, 15vw);
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -753,23 +753,23 @@ main {
 }
 
 .combined-results-contact .contact-shape-1 {
-  width: 350px;
-  height: 350px;
+  width: min(350px, 45vw);
+  height: min(350px, 45vw);
   background: rgba(251, 191, 36, 0.12);
   filter: blur(100px);
   border-radius: 50%;
   top: 10%;
-  right: -50px;
+  right: -5%;
 }
 
 .combined-results-contact .contact-shape-2 {
-  width: 300px;
-  height: 300px;
+  width: min(300px, 40vw);
+  height: min(300px, 40vw);
   background: rgba(59, 130, 246, 0.15);
   filter: blur(80px);
   border-radius: 50%;
   bottom: 15%;
-  left: -50px;
+  left: -5%;
 }
 
 .combined-results-contact .floating-shapes {

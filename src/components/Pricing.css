@@ -90,34 +90,12 @@
 }
 
 .pricing-bonus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-xs);
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(251, 191, 36, 0.1) 100%);
-    border: 1px solid var(--gold);
-    border-radius: var(--radius-full);
-    padding: var(--space-xs) var(--space-md);
-    margin-bottom: var(--space-lg);
-    font-size: 0.9rem;
-    font-weight: 700;
+    display: block;
+    margin-top: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    animation: pulse-bonus 2s ease-in-out infinite;
-}
-
-.bonus-icon {
-    font-size: 1rem;
-}
-
-@keyframes pulse-bonus {
-    0%, 100% {
-        box-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
-    }
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
 }
 
 .pricing-features {

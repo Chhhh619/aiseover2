@@ -59,17 +59,16 @@ function Pricing() {
                                 <span className="amount">{pkg.price}</span>
                             </div>
                             <p className="pricing-tagline">{pkg.tagline}</p>
-                            {pkg.bonus && (
-                                <div className="pricing-bonus">
-                                    <span className="bonus-icon">🎁</span>
-                                    <span>{pkg.bonus}</span>
-                                </div>
-                            )}
                             <ul className="pricing-features">
                                 {pkg.features.map((feature, i) => (
                                     <li key={i}>
                                         <span className="icon">✓</span>
-                                        <span>{feature}</span>
+                                        <span>
+                                            {feature}
+                                            {pkg.bonus && i === 0 && (
+                                                <span className="pricing-bonus">{pkg.bonus}</span>
+                                            )}
+                                        </span>
                                     </li>
                                 ))}
                             </ul>

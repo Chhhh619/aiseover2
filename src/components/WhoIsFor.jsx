@@ -29,7 +29,7 @@ function WhoIsFor() {
                         onClick={openContactModal}
                         className="btn btn-primary who-cta"
                     >
-                        See If You Qualify
+                        Get Started
                     </button>
                 </div>
             </div>
