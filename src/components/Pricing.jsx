@@ -13,27 +13,37 @@ function Pricing() {
         {
             name: 'Individual',
             price: '2,000',
-            tagline: 'For solopreneurs and small teams',
+            tagline: 'Best for SMEs starting with AI-powered SEO growth',
+            tagline2: 'We help you create and publish articles directly on your website',
+            urls: '1 URL',
             features: [
-                '50 SEO-optimized articles',
-                'AI-powered keyword research',
-                'Content ready to publish',
-                'Email support'
+                '1 Website URL',
+                '5 Target Keywords',
+                '500 AI-generated SEO articles',
+                'Articles published on your website by us',
+                'Built for AI SEO and Google visibility',
+                'Fully optimized and ready to rank'
             ],
+            guarantee: 'Guarantee 2 keywords on Google 1st page within 12 months',
             featured: false
         },
         {
             name: 'Enterprise',
             price: '7,000',
-            tagline: 'For growing businesses ready to scale',
-            bonus: '+500 Bonus Articles Included',
+            tagline: 'Designed for growing brands managing multiple websites',
+            tagline2: 'High-volume AI SEO content with stronger ranking guarantees',
+            urls: '4 URLs',
+            urlBreakdown: '500 + 500 bonus = 1,000 articles per URL',
             features: [
-                '500 SEO-optimized articles',
-                'Advanced keyword strategy',
-                'Priority content delivery',
-                'Dedicated account manager',
-                'Monthly performance report'
+                '4 Website URLs',
+                '5 Target Keywords per URL',
+                '500 SEO articles + 500 bonus per URL',
+                'Total up to 1,000 articles per URL',
+                'Articles published on each website by us',
+                'Built for AI SEO dominance',
+                'Enterprise-level content scaling'
             ],
+            guarantee: 'Guarantee 3 keywords on Google 1st page within 12 months per URL',
             featured: true
         }
     ]
@@ -57,21 +67,30 @@ function Pricing() {
                             <div className="pricing-price">
                                 <span className="currency">RM</span>
                                 <span className="amount">{pkg.price}</span>
+                                <span className="period">/month</span>
                             </div>
+                            <div className="pricing-urls">{pkg.urls}</div>
                             <p className="pricing-tagline">{pkg.tagline}</p>
+                            {pkg.tagline2 && (
+                                <p className="pricing-tagline2">{pkg.tagline2}</p>
+                            )}
+                            {pkg.urlBreakdown && (
+                                <div className="pricing-breakdown">{pkg.urlBreakdown}</div>
+                            )}
                             <ul className="pricing-features">
                                 {pkg.features.map((feature, i) => (
                                     <li key={i}>
                                         <span className="icon">✓</span>
-                                        <span>
-                                            {feature}
-                                            {pkg.bonus && i === 0 && (
-                                                <span className="pricing-bonus">{pkg.bonus}</span>
-                                            )}
-                                        </span>
+                                        <span>{feature}</span>
                                     </li>
                                 ))}
                             </ul>
+                            {pkg.guarantee && (
+                                <div className="pricing-guarantee-highlight">
+                                    <span className="guarantee-star">⭐</span>
+                                    <span>{pkg.guarantee}</span>
+                                </div>
+                            )}
                             <div className="guarantee-badge">
                                 <span className="guarantee-icon">🛡️</span>
                                 <span>100% Money-Back Guarantee<br />No questions asked</span>

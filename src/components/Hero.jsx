@@ -1,8 +1,51 @@
+import { useState, useEffect, useRef } from 'react'
 import { useModal } from '../context/ModalContext'
 import './Hero.css'
 
 function Hero() {
     const { openContactModal } = useModal()
+    const [count, setCount] = useState(0)
+    const [showCelebration, setShowCelebration] = useState(false)
+    const targetCount = 1000
+    const animationRef = useRef(null)
+    const progressRef = useRef(null)
+
+    useEffect(() => {
+        const duration = 3000
+        const startTime = performance.now()
+
+        const easeOutExpo = (t) => {
+            return t === 1 ? 1 : 1 - Math.pow(2, -10 * t)
+        }
+
+        const animate = (currentTime) => {
+            const elapsed = currentTime - startTime
+            const progress = Math.min(elapsed / duration, 1)
+            const easedProgress = easeOutExpo(progress)
+            const currentCount = Math.floor(easedProgress * targetCount)
+
+            setCount(currentCount)
+
+            if (progressRef.current) {
+                progressRef.current.style.width = `${easedProgress * 100}%`
+            }
+
+            if (progress < 1) {
+                animationRef.current = requestAnimationFrame(animate)
+            } else {
+                setShowCelebration(true)
+                setTimeout(() => setShowCelebration(false), 3000)
+            }
+        }
+
+        animationRef.current = requestAnimationFrame(animate)
+
+        return () => {
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current)
+            }
+        }
+    }, [])
 
     const handleCTAClick = (e) => {
         e.preventDefault()
@@ -47,17 +90,32 @@ function Hero() {
 
                     {/* Right Column - Visual */}
                     <div className="hero-visual">
-                        <div className="hero-metrics-card">
+                        <div className={`hero-metrics-card ${showCelebration ? 'celebrating' : ''}`}>
+                            {showCelebration && (
+                                <div className="confetti-container">
+                                    {[...Array(20)].map((_, i) => (
+                                        <div key={i} className={`confetti confetti-${i % 5}`} style={{
+                                            left: `${Math.random() * 100}%`,
+                                            animationDelay: `${Math.random() * 0.5}s`
+                                        }} />
+                                    ))}
+                                </div>
+                            )}
                             <div className="metrics-status">
                                 <span className="status-indicator"></span>
-                                <span className="status-text">AI Analysis Running</span>
+                                <span className="status-text">AI Articles Generated...</span>
                             </div>
                             <div className="metrics-display">
-                                <div className="metrics-number">+340%</div>
-                                <div className="metrics-label">Traffic Increase</div>
+                                <div className={`metrics-number ${showCelebration ? 'pulse' : ''}`}>
+                                    {count.toLocaleString()}
+                                </div>
+                                <div className="metrics-label">Articles Created</div>
                             </div>
                             <div className="metrics-progress">
-                                <div className="progress-bar"></div>
+                                <div
+                                    ref={progressRef}
+                                    className="progress-bar"
+                                ></div>
                             </div>
                         </div>
                     </div>
