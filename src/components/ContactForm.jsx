@@ -35,16 +35,7 @@ function ContactForm() {
     }
 
     return (
-        <section className="section section-gradient" id="consultation-section" style={{background: 'linear-gradient(180deg, #0a1628 0%, #1e3a5f 100%)', position: 'relative', overflow: 'hidden'}}>
-            {/* Glassmorphism shapes */}
-            <div className="glass-shape contact-shape-1"></div>
-            <div className="glass-shape contact-shape-2"></div>
-            {/* Decorative Cubes */}
-            <div className="floating-shapes">
-                <div className="shape-cube" style={{ top: '20%', left: '5%' }}></div>
-                <div className="shape-cube" style={{ bottom: '30%', right: '8%', width: '60px', height: '60px' }}></div>
-            </div>
-
+        <div className="contact-wrapper" id="consultation-section">
             <div className="container container-narrow">
                 <h2 className="section-title section-title-white">Start with a Free AI <span className="seo-highlight">SEO</span> Assessment</h2>
                 <p className="section-subtitle">
@@ -175,7 +166,7 @@ function ContactForm() {
                     </form>
                 )}
             </div>
-        </section>
+        </div>
     )
 }
 

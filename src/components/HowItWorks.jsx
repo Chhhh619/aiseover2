@@ -1,12 +1,22 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import './HowItWorks.css'
 
 function HowItWorks() {
     const [activeTab, setActiveTab] = useState(0)
+    const [slideDirection, setSlideDirection] = useState('right')
+    const [animationKey, setAnimationKey] = useState(0)
     const sliderRef = useRef(null)
     const [isDragging, setIsDragging] = useState(false)
     const [startX, setStartX] = useState(0)
     const [scrollLeft, setScrollLeft] = useState(0)
+
+    const changeTab = (newTab) => {
+        if (newTab !== activeTab) {
+            setSlideDirection(newTab > activeTab ? 'right' : 'left')
+            setAnimationKey(prev => prev + 1)
+            setActiveTab(newTab)
+        }
+    }
 
     const steps = [
         {
@@ -55,9 +65,9 @@ function HowItWorks() {
 
         if (Math.abs(diff) > 50) {
             if (diff > 0 && activeTab < steps.length - 1) {
-                setActiveTab(activeTab + 1)
+                changeTab(activeTab + 1)
             } else if (diff < 0 && activeTab > 0) {
-                setActiveTab(activeTab - 1)
+                changeTab(activeTab - 1)
             }
         }
     }
@@ -80,9 +90,9 @@ function HowItWorks() {
 
         if (Math.abs(diff) > 50) {
             if (diff > 0 && activeTab < steps.length - 1) {
-                setActiveTab(activeTab + 1)
+                changeTab(activeTab + 1)
             } else if (diff < 0 && activeTab > 0) {
-                setActiveTab(activeTab - 1)
+                changeTab(activeTab - 1)
             }
         }
     }
@@ -103,7 +113,7 @@ function HowItWorks() {
                         <button
                             key={index}
                             className={`tab-btn ${activeTab === index ? 'active' : ''}`}
-                            onClick={() => setActiveTab(index)}
+                            onClick={() => changeTab(index)}
                         >
                             <span className="tab-number">Step {index + 1}</span>
                         </button>
@@ -123,9 +133,14 @@ function HowItWorks() {
                     onMouseLeave={handleMouseLeave}
                     style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
                 >
-                    <div className="tab-icon">{steps[activeTab].icon}</div>
-                    <h3 className="tab-title">{steps[activeTab].title}</h3>
-                    <p className="tab-description">{steps[activeTab].description}</p>
+                    <div
+                        key={animationKey}
+                        className={`tab-content-inner ${slideDirection === 'right' ? 'slide-right' : 'slide-left'}`}
+                    >
+                        <div className="tab-icon">{steps[activeTab].icon}</div>
+                        <h3 className="tab-title">{steps[activeTab].title}</h3>
+                        <p className="tab-description">{steps[activeTab].description}</p>
+                    </div>
                     <p className="swipe-hint hide-desktop">← Swipe to navigate →</p>
                 </div>
 
@@ -135,7 +150,7 @@ function HowItWorks() {
                         <button
                             key={index}
                             className={`swipe-dot ${activeTab === index ? 'active' : ''}`}
-                            onClick={() => setActiveTab(index)}
+                            onClick={() => changeTab(index)}
                         />
                     ))}
                 </div>

@@ -121,7 +121,7 @@
 @media (max-width: 768px) {
     .solution-grid {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
 
     .solution-content {
@@ -130,11 +130,21 @@
 
     .solution-visual {
         order: 1;
+        display: flex;
+        justify-content: center;
     }
 
     .solution-features li,
     .solution-results li {
-        justify-content: center;
+        justify-content: flex-start;
+    }
+
+    .solution-results {
+        text-align: left;
+    }
+
+    .solution-results h3 {
+        text-align: left;
     }
 
     .solution-image {

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
@@ -26,8 +25,20 @@ function App() {
         <WhatYouGet />
         <WhoIsFor />
         <Trust />
-        <Results />
-        <ContactForm />
+        {/* Combined Results & Contact Section */}
+        <section className="combined-results-contact" id="results-contact-section">
+          {/* Shared Decorative Elements */}
+          <div className="glass-shape contact-shape-1"></div>
+          <div className="glass-shape contact-shape-2"></div>
+          <div className="floating-shapes">
+            <div className="shape-cube" style={{ top: '10%', left: '5%' }}></div>
+            <div className="shape-cube" style={{ top: '40%', right: '5%', width: '60px', height: '60px' }}></div>
+            <div className="shape-cube" style={{ bottom: '20%', left: '8%', width: '50px', height: '50px' }}></div>
+            <div className="shape-cube" style={{ bottom: '35%', right: '12%', width: '70px', height: '70px' }}></div>
+          </div>
+          <Results />
+          <ContactForm />
+        </section>
         <FAQ />
       </main>
       <Footer />

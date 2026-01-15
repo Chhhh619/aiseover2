@@ -37,7 +37,7 @@ function Hero() {
                                 onClick={scrollToConsultation}
                                 className="btn btn-primary btn-lg"
                             >
-                                👉 Let Us Review Your Website
+                                Let Us Review Your Website
                             </a>
                         </div>
                         <p className="trust-sub">Cancel anytime. Full refund. No questions asked.</p>
