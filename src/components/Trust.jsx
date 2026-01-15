@@ -15,7 +15,7 @@ function Trust() {
     return (
         <section className="section section-light" id="trust">
             <div className="container">
-                <h2 className="section-title section-title-dark">Why Businesses Choose CariSEO</h2>
+                <h2 className="section-title section-title-dark">Why Businesses Choose Cari<span className="seo-highlight">SEO</span></h2>
             </div>
             <div className="trust-marquee-wrapper">
                 <div className="trust-marquee">
