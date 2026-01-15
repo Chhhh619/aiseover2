@@ -253,11 +253,22 @@
 @media (max-width: 768px) {
     .solution-grid {
         grid-template-columns: 1fr;
-        text-align: left;
+        text-align: center;
     }
 
     .solution-content {
         order: 1;
+    }
+
+    .solution-title {
+        font-size: clamp(1.5rem, 5vw, 1.75rem);
+        text-align: center;
+    }
+
+    .solution-features li {
+        font-size: 0.95rem;
+        justify-content: center;
+        text-align: left;
     }
 
     .solution-visual {
@@ -266,16 +277,18 @@
         justify-content: center;
     }
 
-    .solution-results li {
-        justify-content: flex-start;
-    }
-
     .solution-results {
         text-align: left;
     }
 
+    .solution-results li {
+        justify-content: flex-start;
+        font-size: 0.9rem;
+    }
+
     .solution-results h3 {
         text-align: left;
+        font-size: 0.9rem;
     }
 
     .solution-image {

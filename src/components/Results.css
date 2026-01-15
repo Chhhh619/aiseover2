@@ -43,8 +43,16 @@
 }
 
 @media (max-width: 768px) {
+    .results-wrapper .section-title {
+        font-size: 1.5rem !important;
+    }
+
     .results-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .result-text {
+        font-size: 0.9rem;
     }
 }
 

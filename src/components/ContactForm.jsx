@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { submitContactForm } from '../lib/supabase'
 import './ContactForm.css'
 
 function ContactForm() {
@@ -12,26 +13,42 @@ function ContactForm() {
         message: ''
     })
     const [submitted, setSubmitted] = useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [error, setError] = useState(null)
 
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormData(prev => ({ ...prev, [name]: value }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('Form submitted:', formData)
-        setSubmitted(true)
-        setTimeout(() => setSubmitted(false), 5000)
-        setFormData({
-            email: '',
-            whatsapp: '',
-            company: '',
-            website: '',
-            size: '',
-            package: '',
-            message: ''
+        setIsSubmitting(true)
+        setError(null)
+
+        const result = await submitContactForm({
+            ...formData,
+            source: 'contact_form'
         })
+
+        setIsSubmitting(false)
+
+        if (result.success) {
+            setSubmitted(true)
+            setTimeout(() => setSubmitted(false), 5000)
+            setFormData({
+                email: '',
+                whatsapp: '',
+                company: '',
+                website: '',
+                size: '',
+                package: '',
+                message: ''
+            })
+        } else {
+            setError('Something went wrong. Please try again.')
+            console.error('Form submission failed:', result.error)
+        }
     }
 
     return (
@@ -45,7 +62,8 @@ function ContactForm() {
                 {submitted ? (
                     <div className="success-message">
                         <span className="success-icon">✓</span>
-                        <p>Thank you! We'll contact you within 24 hours.</p>
+                        <h3>Thank you for your submission!</h3>
+                        <p>We will contact you via WhatsApp or Email shortly.</p>
                     </div>
                 ) : (
                     <form className="contact-form" onSubmit={handleSubmit}>
@@ -89,7 +107,7 @@ function ContactForm() {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="website">Company Website Link</label>
+                                <label htmlFor="website">Company Website Link *</label>
                                 <input
                                     type="url"
                                     id="website"
@@ -97,6 +115,7 @@ function ContactForm() {
                                     value={formData.website}
                                     onChange={handleChange}
                                     placeholder="https://yourwebsite.com"
+                                    required
                                 />
                             </div>
                         </div>
@@ -159,9 +178,10 @@ function ContactForm() {
                                 placeholder="What do you need help with?"
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary btn-full">
-                                Subscribe Now!
+                        <button type="submit" className="btn btn-primary btn-full" disabled={isSubmitting}>
+                                {isSubmitting ? 'Submitting...' : 'Subscribe Now!'}
                         </button>
+                        {error && <p className="form-error">{error}</p>}
                         <p className="form-trust">No spam. No pressure. No obligation.</p>
                     </form>
                 )}
