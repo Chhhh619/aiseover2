@@ -193,7 +193,7 @@ function ContactModal() {
                                 />
                             </div>
                             <button type="submit" className="btn btn-primary btn-full">
-                                Get My Free AI SEO Assessment
+                                Subscribe Now!
                             </button>
                             <p className="form-trust">No spam. No pressure. No obligation.</p>
                         </form>
