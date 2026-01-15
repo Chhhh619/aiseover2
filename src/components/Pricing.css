@@ -2,13 +2,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-xl);
-    max-width: min(1000px, 100%);
+    max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .pricing-card {
     background: rgba(25, 25, 35, 0.4);
-    /* Dark Glass */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -17,9 +19,13 @@
     position: relative;
     transition: all 0.3s ease;
     color: var(--text-white);
-    /* White Text */
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    text-align: center;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .pricing-card:hover {
@@ -32,23 +38,23 @@
     border-color: var(--gold);
     box-shadow: 0 0 40px rgba(251, 191, 36, 0.15);
     background: rgba(251, 191, 36, 0.05);
-    /* Slight gold tint */
+    padding-top: calc(var(--space-xl) + 30px);
 }
 
 .featured-label {
     position: absolute;
-    top: -14px;
+    top: 12px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--gold);
     color: var(--text-dark);
-    /* Keep dark text on gold bg */
     padding: var(--space-xs) var(--space-md);
     border-radius: var(--radius-full);
     font-size: 0.8rem;
     font-weight: 700;
     white-space: nowrap;
     box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+    z-index: 10;
 }
 
 .pricing-name {
@@ -98,13 +104,12 @@
     border-radius: var(--radius-full);
     display: inline-block;
     width: auto;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
 
-.pricing-card {
-    text-align: center;
-}
 
 .pricing-breakdown {
     text-align: center;
@@ -116,6 +121,9 @@
     border-radius: var(--radius-md);
     padding: var(--space-sm) var(--space-md);
     margin-bottom: var(--space-md);
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .pricing-tagline {
@@ -148,6 +156,8 @@
     margin-bottom: var(--space-lg);
     flex-grow: 1;
     text-align: left;
+    min-width: 0;
+    width: 100%;
 }
 
 .pricing-features li {
@@ -157,6 +167,13 @@
     padding: var(--space-xs) 0;
     color: var(--text-white);
     text-align: left;
+    min-width: 0;
+}
+
+.pricing-features li span:last-child {
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .pricing-features .icon {
@@ -189,6 +206,9 @@
     color: var(--gold);
     text-align: center;
     box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .guarantee-star {
@@ -208,6 +228,9 @@
     font-size: 0.875rem;
     color: #4ade80;
     text-align: left;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .guarantee-badge span:last-child {
@@ -221,5 +244,55 @@
 @media (max-width: 768px) {
     .pricing-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .pricing-card {
+        padding: var(--space-md);
+        max-width: 100%;
+        width: 100%;
+        min-width: 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .pricing-price .amount {
+        font-size: 2.5rem;
+    }
+
+    .pricing-guarantee-highlight {
+        flex-direction: column;
+        gap: var(--space-xs);
+        padding: var(--space-sm);
+        font-size: 0.8rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .pricing-breakdown {
+        font-size: 0.75rem;
+        padding: var(--space-xs) var(--space-sm);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .pricing-urls {
+        font-size: 1rem;
+    }
+
+    .pricing-features li {
+        font-size: 0.9rem;
+    }
+
+    .guarantee-badge {
+        font-size: 0.8rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .featured-label {
+        font-size: 0.7rem;
+        padding: var(--space-xs) var(--space-sm);
     }
 }

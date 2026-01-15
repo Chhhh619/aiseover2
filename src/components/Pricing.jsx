@@ -33,7 +33,7 @@ function Pricing() {
             tagline: 'Designed for growing brands managing multiple websites',
             tagline2: 'High-volume AI SEO content with stronger ranking guarantees',
             urls: '4 URLs',
-            urlBreakdown: '500 + 500 bonus = 1,000 articles per URL',
+            urlBreakdown: '1,000 ARTICLES PER URL',
             features: [
                 '4 Website URLs',
                 '5 Target Keywords per URL',

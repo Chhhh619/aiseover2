@@ -16,7 +16,7 @@ function Solution() {
                     {/* Left Column - Text */}
                     <div className="solution-content">
                         <h2 className="solution-title">
-                            CariSEO helps you get found where your customers are searching
+                            Cari<span className="seo-highlight">SEO</span> helps you get found where your customers are searching
                         </h2>
 
                         <div className="solution-results">

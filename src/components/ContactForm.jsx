@@ -160,7 +160,7 @@ function ContactForm() {
                             />
                         </div>
                         <button type="submit" className="btn btn-primary btn-full">
-                            👉 Get My Free AI SEO Assessment
+                             Get My Free AI SEO Assessment
                         </button>
                         <p className="form-trust">No spam. No pressure. No obligation.</p>
                     </form>
