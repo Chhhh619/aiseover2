@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { useModal } from '../context/ModalContext'
+import { getArticleCount, subscribeToArticleChanges } from '../lib/supabase'
 import './Hero.css'
 
 // Animated digit component - rolls like an odometer
@@ -36,50 +37,24 @@ function AnimatedCounter({ value }) {
 
 function Hero() {
     const { openContactModal } = useModal()
-    const [count, setCount] = useState(10000)
-    const intervalRef = useRef(null)
+    const [count, setCount] = useState(0)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        const STORAGE_KEY = 'cariseo_article_counter'
-        const BASE_COUNT = 10000
-        const RATE_MIN = 2 // articles per second
-        const RATE_MAX = 5 // articles per second
-        const AVG_RATE = (RATE_MIN + RATE_MAX) / 2 // 3.5 per second
-
-        // Get or set the initial timestamp
-        let startTimestamp = localStorage.getItem(STORAGE_KEY)
-        if (!startTimestamp) {
-            startTimestamp = Date.now().toString()
-            localStorage.setItem(STORAGE_KEY, startTimestamp)
+        // Fetch initial count
+        const fetchCount = async () => {
+            const { count: articleCount } = await getArticleCount()
+            setCount(articleCount)
+            setIsLoading(false)
         }
+        fetchCount()
 
-        // Calculate count based on elapsed time
-        const calculateCount = () => {
-            const elapsed = Date.now() - parseInt(startTimestamp)
-            const secondsElapsed = elapsed / 1000
-            // Add some randomness by using a seeded variation
-            const baseAddition = Math.floor(secondsElapsed * AVG_RATE)
-            return BASE_COUNT + baseAddition
-        }
+        // Subscribe to real-time inserts - increment count when new articles are created
+        const unsubscribe = subscribeToArticleChanges(() => {
+            setCount(prev => prev + 1)
+        })
 
-        // Set initial count
-        setCount(calculateCount())
-
-        // Update every 300-500ms with random increment
-        const tick = () => {
-            const randomDelay = 300 + Math.random() * 200
-            intervalRef.current = setTimeout(() => {
-                setCount(prev => prev + Math.floor(Math.random() * 2) + 1)
-                tick()
-            }, randomDelay)
-        }
-        tick()
-
-        return () => {
-            if (intervalRef.current) {
-                clearTimeout(intervalRef.current)
-            }
-        }
+        return () => unsubscribe()
     }, [])
 
     const handleCTAClick = (e) => {
@@ -132,7 +107,11 @@ function Hero() {
                             </div>
                             <div className="metrics-display">
                                 <div className="metrics-number">
-                                    <AnimatedCounter value={count} />
+                                    {isLoading ? (
+                                        <div className="counter-skeleton"></div>
+                                    ) : (
+                                        <AnimatedCounter value={count} />
+                                    )}
                                 </div>
                                 <div className="metrics-label">Articles Created</div>
                             </div>
