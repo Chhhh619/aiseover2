@@ -89,6 +89,28 @@
 .navbar-actions .btn {
     padding: 0.625rem 1.25rem;
     font-size: 0.875rem;
+    height: 40px;
+    line-height: 1;
+}
+
+.navbar-actions .btn-outline {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: var(--text-white);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    height: 40px;
+    line-height: 1;
+}
+
+.navbar-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
 }
 
 .navbar-toggle {
@@ -152,8 +174,13 @@
         font-weight: 600;
     }
 
-    .navbar-actions .btn {
+    .navbar-actions .btn-primary {
         display: none;
+    }
+
+    .navbar-actions .btn-outline {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
     }
 
     .logo-image {

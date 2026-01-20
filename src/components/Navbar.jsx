@@ -49,6 +49,14 @@ function Navbar() {
                     </div>
 
                     <div className="navbar-actions">
+                        <a
+                            href="https://app.cariseo.com/"
+                            className="btn btn-outline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Login
+                        </a>
                         <button
                             onClick={handleGetStarted}
                             className="btn btn-primary"

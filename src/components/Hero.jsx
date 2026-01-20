@@ -1,61 +1,109 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useModal } from '../context/ModalContext'
 import { getArticleCount, subscribeToArticleChanges } from '../lib/supabase'
 import './Hero.css'
 
-// Animated digit component - rolls like an odometer
+// Animated digit component with smooth linear transition
 function AnimatedDigit({ digit }) {
     return (
         <div className="digit-container">
-            <div
+            <motion.div
                 className="digit-roller"
-                style={{ transform: `translateY(-${digit * 10}%)` }}
+                initial={false}
+                animate={{ y: `-${digit * 10}%` }}
+                transition={{
+                    type: "tween",
+                    duration: 0.3,
+                    ease: "easeOut"
+                }}
             >
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
                     <span key={num} className="digit">{num}</span>
                 ))}
-            </div>
+            </motion.div>
         </div>
     )
 }
 
-// Animated counter that displays each digit with rolling animation
+// Animated counter that displays each digit with smooth rolling animation
 function AnimatedCounter({ value }) {
     const formattedValue = value.toLocaleString()
+    const chars = formattedValue.split('')
+    const totalChars = chars.length
 
     return (
         <div className="animated-counter">
-            {formattedValue.split('').map((char, index) => {
-                if (char === ',') {
-                    return <span key={index} className="comma">,</span>
-                }
-                return <AnimatedDigit key={index} digit={parseInt(char)} />
-            })}
+            <AnimatePresence mode="popLayout">
+                {chars.map((char, index) => {
+                    const posFromRight = totalChars - 1 - index
+                    if (char === ',') {
+                        return (
+                            <motion.span
+                                key={`comma-${posFromRight}`}
+                                className="comma"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                transition={{ duration: 0.2, ease: "easeOut" }}
+                            >
+                                ,
+                            </motion.span>
+                        )
+                    }
+                    return <AnimatedDigit key={`digit-${posFromRight}`} digit={parseInt(char)} />
+                })}
+            </AnimatePresence>
         </div>
     )
 }
 
 function Hero() {
     const { openContactModal } = useModal()
-    const [count, setCount] = useState(0)
+    const [actualCount, setActualCount] = useState(0)
+    const [displayCount, setDisplayCount] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
+    const intervalTimeRef = useRef(50)
+
+    // Round down to nearest magnitude (148 → 100, 1523 → 1000, 85 → 80)
+    const floorToMagnitude = (num) => {
+        if (num < 10) return 0
+        const magnitude = Math.pow(10, Math.floor(Math.log10(num)))
+        return Math.floor(num / magnitude) * magnitude
+    }
 
     useEffect(() => {
         // Fetch initial count
         const fetchCount = async () => {
             const { count: articleCount } = await getArticleCount()
-            setCount(articleCount)
+            const startCount = floorToMagnitude(articleCount)
+            const difference = articleCount - startCount
+            // Calculate fixed interval for ~2.5 seconds total, minimum 50ms
+            intervalTimeRef.current = Math.max(50, 2500 / difference)
+            setActualCount(articleCount)
+            setDisplayCount(startCount)
             setIsLoading(false)
         }
         fetchCount()
 
         // Subscribe to real-time inserts - increment count when new articles are created
         const unsubscribe = subscribeToArticleChanges(() => {
-            setCount(prev => prev + 1)
+            setActualCount(prev => prev + 1)
         })
 
         return () => unsubscribe()
     }, [])
+
+    // Animate count up: 100 → 101 → 102 → ... → 148 at constant speed
+    useEffect(() => {
+        if (isLoading || displayCount >= actualCount) return
+
+        const timer = setTimeout(() => {
+            setDisplayCount(prev => prev + 1)
+        }, intervalTimeRef.current)
+
+        return () => clearTimeout(timer)
+    }, [displayCount, actualCount, isLoading])
 
     const handleCTAClick = (e) => {
         e.preventDefault()
@@ -110,7 +158,7 @@ function Hero() {
                                     {isLoading ? (
                                         <div className="counter-skeleton"></div>
                                     ) : (
-                                        <AnimatedCounter value={count} />
+                                        <AnimatedCounter value={displayCount} />
                                     )}
                                 </div>
                                 <div className="metrics-label">Articles Created</div>
