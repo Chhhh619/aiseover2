@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './TermsAndConditions.css'
 
 function TermsAndConditions() {
@@ -152,7 +153,7 @@ function TermsAndConditions() {
                 </section>
 
                 <div className="terms-back-link">
-                    <a href="/">← Back to Home</a>
+                    <Link to="/">← Back to Home</Link>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 function Footer() {
@@ -41,7 +42,7 @@ function Footer() {
                         <p className="footer-location">Kuala Lumpur, Malaysia</p>
                     </div>
                     <div className="footer-links">
-                        <a href="#">Terms & Conditions</a>
+                        <Link to="/terms">Terms & Conditions</Link>
                         <a href="#">Privacy Policy</a>
                     </div>
                 </div>
