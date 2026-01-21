@@ -50,8 +50,9 @@
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-25%);
     }
 }
 
@@ -80,6 +81,7 @@
 }
 
 @media (max-width: 768px) {
+
     .trust-marquee-wrapper::before,
     .trust-marquee-wrapper::after {
         width: 50px;

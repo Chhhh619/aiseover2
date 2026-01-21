@@ -4,11 +4,14 @@ function Trust() {
     const items = [
         { icon: '🤖', text: 'AI-first approach to SEO' },
         { icon: '🌏', text: 'Deep understanding of Malaysian market' },
-        { icon: '🎯', text: 'Results-driven strategy' }
+        { icon: '🎯', text: 'Results-driven strategy' },
+        { icon: '💰', text: 'Cost-Effective for SMEs' },
+        { icon: '🔑', text: 'Additional Keyword Coverage' },
+        { icon: '📈', text: 'Consistent, Scalable Output' }
     ]
 
-    // Duplicate items for seamless loop
-    const duplicatedItems = [...items, ...items]
+    // Duplicate items multiple times for seamless infinite loop
+    const duplicatedItems = [...items, ...items, ...items, ...items]
 
     return (
         <section className="section section-light" id="trust">

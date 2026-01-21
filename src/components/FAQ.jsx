@@ -16,6 +16,18 @@ function FAQ() {
         {
             question: 'Do I need to be technical to use CariSEO?',
             answer: 'Not at all. We handle all the technical aspects of AI SEO optimization. You just need to understand your business and target audience – we take care of the rest, including keyword research, content structuring, and AI optimization.'
+        },
+        {
+            question: 'What can I expect from AI search optimization?',
+            answer: 'AI search optimization focuses on making your website content more discoverable and relevant in AI-powered search results. By structuring content with EEAT principles (Expertise, Experience, Authoritativeness, and Trustworthiness), your site builds credibility that AI systems can recognize. This strong foundation increases the chances of your content being surfaced and referenced across both search engines and AI-driven platforms.'
+        },
+        {
+            question: 'Is there a guarantee on the results from AI search optimization?',
+            answer: 'Due to the dynamic nature of AI and its personalized search results, it is not possible to guarantee specific outcomes at this stage. Our goal is to prepare your website with the best practices and strategies to adapt to these changes, positioning your brand for long-term visibility and search success.'
+        },
+        {
+            question: 'Can AI replace human SEO experts?',
+            answer: 'No. AI is a powerful tool, but it lacks the strategic thinking, creativity, and ethical judgment of a human expert. The best results come from a synergy of human strategy guiding AI execution.'
         }
     ]
 
