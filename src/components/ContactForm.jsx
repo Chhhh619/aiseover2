@@ -9,7 +9,7 @@ function ContactForm() {
         company: '',
         website: '',
         size: '',
-        package: '',
+        package: 'individual',
         message: ''
     })
     const [submitted, setSubmitted] = useState(false)
@@ -42,7 +42,7 @@ function ContactForm() {
                 company: '',
                 website: '',
                 size: '',
-                package: '',
+                package: 'individual',
                 message: ''
             })
         } else {
@@ -135,38 +135,7 @@ function ContactForm() {
                                 <option value="200+">51+ employees</option>
                             </select>
                         </div>
-                        <div className="form-group">
-                            <label>Select Package *</label>
-                            <div className="package-selection">
-                                <label className={`package-option ${formData.package === 'individual' ? 'selected' : ''}`}>
-                                    <input
-                                        type="radio"
-                                        name="package"
-                                        value="individual"
-                                        checked={formData.package === 'individual'}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                    <span className="package-info">
-                                        <span className="package-name">Individual</span>
-                                        <span className="package-price">RM 2,000</span>
-                                    </span>
-                                </label>
-                                <label className={`package-option ${formData.package === 'enterprise' ? 'selected' : ''}`}>
-                                    <input
-                                        type="radio"
-                                        name="package"
-                                        value="enterprise"
-                                        checked={formData.package === 'enterprise'}
-                                        onChange={handleChange}
-                                    />
-                                    <span className="package-info">
-                                        <span className="package-name">Enterprise</span>
-                                        <span className="package-price">RM 7,000</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
+
                         <div className="form-group">
                             <label htmlFor="message">Message / Notes (Optional)</label>
                             <textarea
@@ -179,7 +148,7 @@ function ContactForm() {
                             />
                         </div>
                         <button type="submit" className="btn btn-primary btn-full" disabled={isSubmitting}>
-                                {isSubmitting ? 'Submitting...' : 'Subscribe Now!'}
+                            {isSubmitting ? 'Submitting...' : 'Subscribe Now!'}
                         </button>
                         {error && <p className="form-error">{error}</p>}
                         <p className="form-trust">No spam. No pressure. No obligation.</p>

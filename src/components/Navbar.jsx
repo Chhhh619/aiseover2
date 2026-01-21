@@ -46,12 +46,29 @@ function Navbar() {
                         <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>How It Works</a>
                         <a href="#pricing" onClick={(e) => scrollToSection(e, 'pricing')}>Pricing</a>
                         <a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a>
+                        <a
+                            href="https://app.cariseo.com/"
+                            className="mobile-login-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Login
+                        </a>
+                        <button
+                            onClick={(e) => {
+                                handleGetStarted(e)
+                                setMobileMenuOpen(false)
+                            }}
+                            className="btn btn-primary mobile-cta"
+                        >
+                            Get Started
+                        </button>
                     </div>
 
                     <div className="navbar-actions">
                         <a
                             href="https://app.cariseo.com/"
-                            className="btn btn-outline"
+                            className="btn btn-outline desktop-only"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -59,7 +76,7 @@ function Navbar() {
                         </a>
                         <button
                             onClick={handleGetStarted}
-                            className="btn btn-primary"
+                            className="btn btn-primary desktop-only"
                         >
                             Get Started
                         </button>

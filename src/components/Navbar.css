@@ -144,6 +144,15 @@
     transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Mobile login link in burger menu */
+.mobile-login-link {
+    display: none;
+}
+
+.mobile-cta {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .navbar-toggle {
         display: flex;
@@ -158,6 +167,7 @@
         background: var(--bg-dark);
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: var(--space-xl);
         opacity: 0;
         visibility: hidden;
@@ -174,13 +184,26 @@
         font-weight: 600;
     }
 
-    .navbar-actions .btn-primary {
-        display: none;
+    /* Show login link in mobile menu */
+    .navbar-links .mobile-login-link {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--gold);
+        text-decoration: none;
     }
 
-    .navbar-actions .btn-outline {
-        padding: 0.625rem 1.25rem;
-        font-size: 0.875rem;
+    /* Show mobile CTA in burger menu */
+    .navbar-links .mobile-cta {
+        display: inline-flex;
+        margin-top: var(--space-md);
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* Hide desktop buttons */
+    .navbar-actions .desktop-only {
+        display: none;
     }
 
     .logo-image {

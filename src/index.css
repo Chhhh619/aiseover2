@@ -613,7 +613,7 @@ textarea {
   }
 
   .container {
-    padding: 0 var(--space-sm);
+    padding: 0 var(--space-md);
   }
 
   .btn {

@@ -137,10 +137,13 @@
 }
 
 @keyframes pulse-dot {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         transform: scale(1);
     }
+
     50% {
         opacity: 0.6;
         transform: scale(1.1);
@@ -208,12 +211,10 @@
 .counter-skeleton {
     width: 280px;
     height: 1.2em;
-    background: linear-gradient(
-        90deg,
-        rgba(34, 197, 94, 0.2) 0%,
-        rgba(34, 197, 94, 0.4) 50%,
-        rgba(34, 197, 94, 0.2) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(34, 197, 94, 0.2) 0%,
+            rgba(34, 197, 94, 0.4) 50%,
+            rgba(34, 197, 94, 0.2) 100%);
     background-size: 200% 100%;
     animation: skeleton-shimmer 1.5s ease-in-out infinite;
     border-radius: 8px;
@@ -221,8 +222,13 @@
 }
 
 @keyframes skeleton-shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 .metrics-label {
@@ -255,9 +261,17 @@
 }
 
 @keyframes celebrate-glow {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .metrics-number.pulse {
@@ -265,9 +279,17 @@
 }
 
 @keyframes number-pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .confetti-container {
@@ -290,17 +312,42 @@
     animation: confetti-fall 3s ease-out forwards;
 }
 
-.confetti-0 { background: #22c55e; border-radius: 50%; }
-.confetti-1 { background: #fbbf24; border-radius: 2px; transform: rotate(45deg); }
-.confetti-2 { background: #3b82f6; border-radius: 50%; width: 8px; height: 8px; }
-.confetti-3 { background: #10b981; border-radius: 2px; }
-.confetti-4 { background: #f59e0b; border-radius: 50%; width: 6px; height: 6px; }
+.confetti-0 {
+    background: #22c55e;
+    border-radius: 50%;
+}
+
+.confetti-1 {
+    background: #fbbf24;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+.confetti-2 {
+    background: #3b82f6;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.confetti-3 {
+    background: #10b981;
+    border-radius: 2px;
+}
+
+.confetti-4 {
+    background: #f59e0b;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+}
 
 @keyframes confetti-fall {
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
     }
+
     100% {
         transform: translateY(300px) rotate(720deg);
         opacity: 0;
@@ -330,9 +377,12 @@
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -406,5 +456,10 @@
 
     .digit {
         height: 1.2em;
+    }
+
+    /* Hide floating cubes on mobile to prevent overlap */
+    .shape-cube {
+        display: none;
     }
 }
