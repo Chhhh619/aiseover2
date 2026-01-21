@@ -50,7 +50,7 @@ function Pricing() {
                             </div>
                             <div className="contact-item">
                                 <span className="contact-icon">📞</span>
-                                <a href="tel:+60123456789">+60 11-3735 5046</a>
+                                <a href="https://api.whatsapp.com/send?phone=601137355046&text=Hi%2C%20I'm%20interested%20in%20AI%20SEO.">+60 11-3735 5046</a>
                             </div>
                         </div>
                     </div>
