@@ -14,14 +14,6 @@ function FAQ() {
             answer: 'Most businesses start seeing improvements in AI visibility within 4-8 weeks. However, building strong authority with AI platforms is an ongoing process. The content we create continues to build your presence over time.'
         },
         {
-            question: 'What is the difference between Individual and Enterprise packages?',
-            answer: 'The Individual package (RM 2,000) includes 10 SEO-optimized articles with AI-powered keyword research, perfect for solopreneurs and small teams. The Enterprise package (RM 7,000) includes 50 articles with advanced keyword strategy, priority delivery, and a dedicated account manager for growing businesses.'
-        },
-        {
-            question: "What's included in the money-back guarantee?",
-            answer: "If you're not satisfied with the quality of our AI SEO content, you can request a full refund within 14 days. No questions asked. We're confident in our work and want you to be too."
-        },
-        {
             question: 'Do I need to be technical to use CariSEO?',
             answer: 'Not at all. We handle all the technical aspects of AI SEO optimization. You just need to understand your business and target audience – we take care of the rest, including keyword research, content structuring, and AI optimization.'
         }

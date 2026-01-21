@@ -1,13 +1,15 @@
-import { useModal } from '../context/ModalContext'
 import './Solution.css'
 
 function Solution() {
-    const { openContactModal } = useModal()
     const results = [
         'Appear in ChatGPT, Perplexity, and AI search results',
         'Drive qualified traffic from AI platforms',
         'Future-proof your SEO strategy'
     ]
+
+    const scrollToPricing = () => {
+        document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
+    }
 
     return (
         <section className="section section-success" id="solution">
@@ -37,7 +39,7 @@ function Solution() {
                         </p>
 
                         <button
-                            onClick={openContactModal}
+                            onClick={scrollToPricing}
                             className="btn btn-primary solution-cta"
                         >
                             Get Started Today

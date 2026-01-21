@@ -4,8 +4,6 @@ function Trust() {
     const items = [
         { icon: '🤖', text: 'AI-first approach to SEO' },
         { icon: '🌏', text: 'Deep understanding of Malaysian market' },
-        { icon: '🏢', text: 'Tailored for SMEs and enterprises' },
-        { icon: '💰', text: '100% money-back guarantee' },
         { icon: '🎯', text: 'Results-driven strategy' }
     ]
 

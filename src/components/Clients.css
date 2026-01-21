@@ -1,0 +1,167 @@
+#clients {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    padding: 60px 0 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.clients-label {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--gold, #fbbf24);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.clients-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+/* Marquee Wrapper */
+.clients-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 15px 0;
+    z-index: 2;
+}
+
+/* Fade edges - matching dark background */
+.clients-marquee-wrapper::before,
+.clients-marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.clients-marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #1e293b, transparent);
+}
+
+.clients-marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #0f172a, transparent);
+}
+
+/* Base Marquee */
+.clients-marquee {
+    display: flex;
+    gap: 80px;
+    width: max-content;
+}
+
+/* Row 1 - Right to Left (faster) */
+.clients-marquee-rtl {
+    animation: scrollClientsRTL 10s linear infinite;
+}
+
+/* Row 2 - Left to Right (reverse direction) */
+.clients-marquee-ltr {
+    animation: scrollClientsLTR 30s linear infinite;
+}
+
+@keyframes scrollClientsRTL {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.33%);
+    }
+}
+
+@keyframes scrollClientsLTR {
+    0% {
+        transform: translateX(-33.33%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Pause on hover */
+.clients-marquee-wrapper:hover .clients-marquee {
+    animation-play-state: paused;
+}
+
+/* Client Logo Item - larger cards */
+.client-logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    height: 120px;
+    padding: 24px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.client-logo-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.client-logo {
+    max-width: 150px;
+    max-height: 85px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(0%);
+    opacity: 1;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #clients {
+        padding: 40px 0 60px;
+    }
+
+    .clients-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .clients-marquee {
+        gap: 30px;
+    }
+
+    .clients-marquee-wrapper {
+        padding: 10px 0;
+    }
+
+    .client-logo-item {
+        min-width: 130px;
+        height: 80px;
+        padding: 12px 20px;
+    }
+
+    .client-logo {
+        max-width: 95px;
+        max-height: 55px;
+    }
+
+    .clients-marquee-wrapper::before,
+    .clients-marquee-wrapper::after {
+        width: 60px;
+    }
+}

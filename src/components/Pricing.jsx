@@ -1,18 +1,12 @@
-import { useModal } from '../context/ModalContext'
 import './Pricing.css'
 
+const STRIPE_LINK = 'https://buy.stripe.com/eVqaEX6c8dHU4IdgdfcV211'
+
 function Pricing() {
-    const { openContactModal } = useModal()
-
-    const handleGetStarted = (e) => {
-        e.preventDefault()
-        openContactModal()
-    }
-
     const features = [
         '1 Website URL',
-        'Up to 10 Target Keywords',
-        '120 English Articles per Month',
+        'Up to 5 Target Keywords + 5 keywords (promo period ends 31 Jan 2026)',
+        '20 English Articles per Month + 100 articles (promo period ends 31 Jan 2026)',
         'Minimum 700 words per article',
         'AI-Assisted SEO Content Deployment at Scale',
         'Programmatic SEO Structure with Internal Linking',
@@ -24,6 +18,10 @@ function Pricing() {
         'Weekly SEO Ranking Reports',
         'Monthly Keyword Performance Report'
     ]
+
+    const handleSubscribe = () => {
+        window.open(STRIPE_LINK, '_blank')
+    }
 
     return (
         <section className="section section-dark" id="pricing" style={{ background: 'linear-gradient(180deg, #1e293b 0%, #0f172a 100%)', position: 'relative', overflow: 'hidden' }}>
@@ -46,7 +44,7 @@ function Pricing() {
                         <div className="pricing-contact-info">
                             <div className="contact-item">
                                 <span className="contact-icon">📧</span>
-                                <a href="mailto:hello@cariseo.com">hello@cariseo.com</a>
+                                <a href="mailto:info@cariseo.com">info@cariseo.com</a>
                             </div>
                             <div className="contact-item">
                                 <span className="contact-icon whatsapp-icon">
@@ -61,12 +59,13 @@ function Pricing() {
 
                     {/* Right Side - Single Pricing Card */}
                     <div className="pricing-card-single">
-                        <div className="plan-badge">Individual Plan</div>
+                        <div className="plan-badge">CariSEO Plan</div>
                         <div className="pricing-price">
                             <span className="currency">RM</span>
                             <span className="amount">99</span>
                             <span className="period">/month</span>
                         </div>
+                        <p className="pricing-sst">*Price excludes SST</p>
                         <p className="pricing-tagline">Perfect for SMEs & startups ready to dominate search rankings</p>
 
                         <ul className="pricing-features">
@@ -84,7 +83,7 @@ function Pricing() {
                         </div>
 
                         <button
-                            onClick={handleGetStarted}
+                            onClick={handleSubscribe}
                             className="btn btn-primary btn-full"
                         >
                             Subscribe Now

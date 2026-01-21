@@ -1,8 +1,6 @@
-import { useModal } from '../context/ModalContext'
 import './WhoIsFor.css'
 
 function WhoIsFor() {
-    const { openContactModal } = useModal()
     const items = [
         'You want inbound leads',
         'You sell services or expertise',
@@ -10,14 +8,18 @@ function WhoIsFor() {
         'Your customers search before buying'
     ]
 
+    const scrollToPricing = () => {
+        document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
+    }
+
     return (
-        <section className="section section-dark" id="who" style={{position: 'relative', overflow: 'hidden'}}>
+        <section className="section section-dark" id="who" style={{ position: 'relative', overflow: 'hidden' }}>
             {/* Decorative Shapes */}
             <div className="floating-shapes">
                 <div className="shape-cube" style={{ top: '20%', right: '10%' }}></div>
                 <div className="shape-cube" style={{ bottom: '25%', left: '8%', width: '60px', height: '60px' }}></div>
             </div>
-            <div className="container container-narrow" style={{position: 'relative', zIndex: 5}}>
+            <div className="container container-narrow" style={{ position: 'relative', zIndex: 5 }}>
                 <h2 className="section-title section-title-white">AI <span className="seo-highlight">SEO</span> Is Right for You If...</h2>
                 <div className="who-card">
                     <ul className="who-list">
@@ -26,7 +28,7 @@ function WhoIsFor() {
                         ))}
                     </ul>
                     <button
-                        onClick={openContactModal}
+                        onClick={scrollToPricing}
                         className="btn btn-primary who-cta"
                     >
                         Get Started

@@ -122,6 +122,13 @@
     font-weight: 500;
 }
 
+.pricing-card-single .pricing-sst {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: var(--space-xs);
+    font-style: italic;
+}
+
 .pricing-card-single .pricing-tagline {
     font-size: 0.95rem;
     color: #64748b;

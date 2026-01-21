@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useModal } from '../context/ModalContext'
 import { getArticleCount, subscribeToArticleChanges } from '../lib/supabase'
 import './Hero.css'
 
@@ -59,7 +58,6 @@ function AnimatedCounter({ value }) {
 }
 
 function Hero() {
-    const { openContactModal } = useModal()
     const [actualCount, setActualCount] = useState(0)
     const [displayCount, setDisplayCount] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
@@ -105,9 +103,9 @@ function Hero() {
         return () => clearTimeout(timer)
     }, [displayCount, actualCount, isLoading])
 
-    const handleCTAClick = (e) => {
+    const scrollToPricing = (e) => {
         e.preventDefault()
-        openContactModal()
+        document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
     }
 
     return (
@@ -137,13 +135,12 @@ function Hero() {
                         </p>
                         <div className="hero-cta-wrapper">
                             <button
-                                onClick={handleCTAClick}
+                                onClick={scrollToPricing}
                                 className="btn btn-primary btn-lg"
                             >
-                                Let Us Review Your Website
+                                Get Started Now
                             </button>
                         </div>
-                        <p className="trust-sub">Cancel anytime. Full refund. No questions asked.</p>
                     </div>
 
                     {/* Right Column - Visual */}
