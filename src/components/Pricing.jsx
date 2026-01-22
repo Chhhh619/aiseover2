@@ -1,6 +1,6 @@
 import './Pricing.css'
 
-const STRIPE_LINK = 'https://buy.stripe.com/eVqaEX6c8dHU4IdgdfcV211'
+const STRIPE_LINK = 'https://buy.stripe.com/4gM00j1VS5bogqV2mpcV212'
 
 function Pricing() {
     const features = [
