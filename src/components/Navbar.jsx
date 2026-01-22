@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import './Navbar.css'
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const location = useLocation()
+
+    // Check if we're on a page that needs the blue navbar (like T&C)
+    const isBlueNavbarPage = location.pathname === '/terms'
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,13 +27,16 @@ function Navbar() {
         setMobileMenuOpen(false)
     }
 
+    // Use blue background logo when scrolled OR on blue navbar pages
+    const useBlueBackgroundLogo = scrolled || isBlueNavbarPage
+
     return (
-        <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+        <nav className={`navbar ${scrolled || isBlueNavbarPage ? 'navbar-scrolled' : ''}`}>
             <div className="container">
                 <div className="navbar-content">
                     <a href="#" className="navbar-logo" onClick={(e) => scrollToSection(e, 'hero')}>
                         <img
-                            src={scrolled ? "/images/cariSeo_background.png" : "/images/cariSeo_text.png"}
+                            src={useBlueBackgroundLogo ? "/images/cariSeo_background.png" : "/images/cariSeo_text.png"}
                             alt="CariSEO by Mampu AI"
                             className="logo-image"
                         />
