@@ -10,7 +10,7 @@ function Pricing() {
         'Minimum 700 words per article',
         'AI-Assisted SEO Content Deployment at Scale',
         'Programmatic SEO Structure with Internal Linking',
-        'Articles Published Directly on Your Website',
+        <>Articles Published <strong>directly on the page that has your domain</strong></>,
         'Full On-Page SEO Optimization',
         'Built for Google and LLM Search Visibility',
         'Advanced Keyword Research',
