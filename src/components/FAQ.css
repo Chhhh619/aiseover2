@@ -65,7 +65,17 @@
 
 .faq-item.active .faq-answer {
     max-height: 300px;
+    overflow-y: auto;
     border-top: 1px solid #e2e8f0;
+}
+
+/* Mobile: allow taller answers and scrolling */
+@media (max-width: 768px) {
+    .faq-item.active .faq-answer {
+        max-height: 250px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
 .faq-item.active .faq-icon {
