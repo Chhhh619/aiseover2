@@ -24,7 +24,7 @@ function Clients() {
     return (
         <section className="section section-dark" id="clients">
             <div className="container">
-                <span className="clients-label">Our Clients •</span>
+                <span className="clients-label">Our Clients of MampuAI •</span>
                 <h2 className="clients-title">Trusted by</h2>
             </div>
 
