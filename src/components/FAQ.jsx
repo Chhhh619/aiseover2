@@ -15,7 +15,7 @@ function FAQ() {
         },
         {
             question: 'Do I need to be technical to use CariSEO?',
-            answer: 'Not at all. We handle all the technical aspects of AI SEO optimization. You just need to understand your business and target audience – we take care of the rest, including keyword research, content structuring, and AI optimization.'
+            answer: 'No. You don’t need to be technical. We provide step by step instructions to connect your website to our article system. Once connected, articles will be published automatically. If you need help with the setup, our team can assist you or work with your developer.'
         },
         {
             question: 'What can I expect from AI search optimization?',
