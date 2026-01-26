@@ -18,6 +18,10 @@ function FAQ() {
             answer: 'No. You don’t need to be technical. We provide step by step instructions to connect your website to our article system. Once connected, articles will be published automatically. If you need help with the setup, our team can assist you or work with your developer.'
         },
         {
+            question: 'What are the requirements for using CariSEO?',
+            answer: 'Follow the step-by-step instructions to link your domain and enable automatic article generation.'
+        },
+        {
             question: 'What can I expect from AI search optimization?',
             answer: 'AI search optimization focuses on making your website content more discoverable and relevant in AI-powered search results. By structuring content with EEAT principles (Expertise, Experience, Authoritativeness, and Trustworthiness), your site builds credibility that AI systems can recognize. This strong foundation increases the chances of your content being surfaced and referenced across both search engines and AI-driven platforms.'
         },
@@ -28,6 +32,10 @@ function FAQ() {
         {
             question: 'Can AI replace human SEO experts?',
             answer: 'No. AI is a powerful tool, but it lacks the strategic thinking, creativity, and ethical judgment of a human expert. The best results come from a synergy of human strategy guiding AI execution.'
+        },
+        {
+            question: 'What if I cant link my domain?',
+            answer: 'Feel free to reach out to us via WhatsApp. We are here to assist you with the linking process.'
         }
     ]
 
