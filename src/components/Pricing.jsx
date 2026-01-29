@@ -6,7 +6,7 @@ function Pricing() {
     const features = [
         '1 Website URL',
         'Up to 5 Target Keywords + 5 keywords (promo period ends 31 Jan 2026)',
-        '20 English Articles per Month + 100 articles (promo period ends 31 Jan 2026)',
+        '30 English Articles per Month',
         'Minimum 700 words per article',
         'AI-Assisted SEO Content Deployment at Scale',
         'Programmatic SEO Structure with Internal Linking',
