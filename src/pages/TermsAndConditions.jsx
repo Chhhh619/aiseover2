@@ -16,15 +16,8 @@ function TermsAndConditions() {
                     <p>1.3 Content is generated using proprietary workflows combining artificial intelligence tools and human review processes where applicable.</p>
 
                     <h3>2. Package Scope and Deliverables</h3>
-                    <p>2.1 The RM99 package includes:</p>
-                    <ul>
-                        <li>120 AI generated articles as stated on the purchase page or proposal.</li>
-                        <li>Articles written in the English language.</li>
-                        <li>General industry relevant content optimized for search intent and keyword themes.</li>
-                    </ul>
-                    <p>2.1.1 Article length is around 700 - 1000 words and may vary depending on topic and structure.</p>
-                    <p>2.1.2 Content structure may include headings, subheadings, bullet points, and summaries where appropriate.</p>
-                    <p>2.1.3 The service does not include custom graphics, images, videos, or infographics unless stated otherwise.</p>
+                    <p>2.1 Content structure may include headings, subheadings, bullet points, and summaries where appropriate.</p>
+                    <p>2.2 The service does not include custom graphics, images, videos, or infographics unless stated otherwise.</p>
 
                     <h3>3. Client Responsibilities</h3>
                     <p>3.1 The client is responsible for providing accurate business information and any specific instructions prior to content generation.</p>
