@@ -47,6 +47,13 @@ function Navbar() {
                         <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>How It Works</a>
                         <a href="#pricing" onClick={(e) => scrollToSection(e, 'pricing')}>Pricing</a>
                         <a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a>
+                        <a 
+                            href="https://blog.cariseo.com/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            Blog
+                        </a>
                         <a
                             href="https://app.cariseo.com/"
                             className="mobile-login-link"
