@@ -35,7 +35,7 @@ function FAQ() {
         },
         {
             question: 'What if I cant link my domain?',
-            answer: 'Feel free to reach out to us via WhatsApp. We are here to assist you with the linking process.'
+            answer: <>Feel free to reach out to us via <a href="https://api.whatsapp.com/send?phone=601137355046&text=Hi%2C%20I'm%20interested%20in%20Cari%20SEO." target="_blank" rel="noopener noreferrer" style={{ color: '#1e3a8a', fontWeight: '600' }}>WhatsApp</a>. We are here to assist you with the linking process.</>
         }
     ]
 
