@@ -42,15 +42,15 @@ function Footer() {
                         <p className="footer-location">Kuala Lumpur, Malaysia</p>
                     </div>
                     <div className="footer-links">
-                        <a 
-                            href="https://blog.cariseo.com/" 
-                            target="_blank" 
+                        <a
+                            href="https://blog.cariseo.com/"
+                            target="_blank"
                             rel="noopener noreferrer"
                         >
                             Blog
                         </a>
                         <Link to="/terms">Terms & Conditions</Link>
-                        <a href="#">Privacy Policy</a>
+                        <Link to="/privacy">Privacy Policy</Link>
                     </div>
                 </div>
                 <div className="footer-bottom">
