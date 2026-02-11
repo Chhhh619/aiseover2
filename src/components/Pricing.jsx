@@ -1,11 +1,15 @@
+import { useState } from 'react'
 import './Pricing.css'
 
-const STRIPE_LINK = 'https://buy.stripe.com/4gM00j1VS5bogqV2mpcV212'
+const STRIPE_MONTHLY = 'https://buy.stripe.com/6oU7sL1VS0V84Idf9bcV213'
+const STRIPE_ANNUAL = 'https://buy.stripe.com/fZuaEX44033g3E91ilcV214'
 
 function Pricing() {
+    const [isAnnual, setIsAnnual] = useState(false)
+
     const features = [
         '1 Website URL',
-        'Up to 5 Target Keywords + 5 keywords (promo period ends 31 Jan 2026)',
+        'Up to 5 Target Keywords + 5 keywords (promo period ends 1 March 2026)',
         '30 English Articles per Month',
         'Minimum 700 words per article',
         'AI-Assisted SEO Content Deployment at Scale',
@@ -20,7 +24,7 @@ function Pricing() {
     ]
 
     const handleSubscribe = () => {
-        window.open(STRIPE_LINK, '_blank')
+        window.open(isAnnual ? STRIPE_ANNUAL : STRIPE_MONTHLY, '_blank')
     }
 
     return (
@@ -57,37 +61,58 @@ function Pricing() {
                         </div>
                     </div>
 
-                    {/* Right Side - Single Pricing Card */}
-                    <div className="pricing-card-single">
-                        <div className="plan-badge">CariSEO Plan</div>
-                        <div className="pricing-price">
-                            <span className="currency">RM</span>
-                            <span className="amount">129</span>
-                            <span className="period">/month</span>
-                        </div>
-                        <p className="pricing-sst">*Price excludes SST</p>
-                        <p className="pricing-tagline">Perfect for SMEs & startups ready to dominate search rankings</p>
-
-                        <ul className="pricing-features">
-                            {features.map((feature, i) => (
-                                <li key={i}>
-                                    <span className="icon">✓</span>
-                                    <span>{feature}</span>
-                                </li>
-                            ))}
-                        </ul>
-
-                        <div className="guarantee-badge">
-                            <span className="guarantee-icon">🛡️</span>
-                            <span>100% Managed by Our Team<br />No technical skills required</span>
+                    {/* Right Side - Pricing Card with Toggle */}
+                    <div className="pricing-card-wrapper">
+                        {/* Billing Toggle */}
+                        <div className="billing-toggle">
+                            <span className={`toggle-label ${!isAnnual ? 'active' : ''}`}>Monthly</span>
+                            <button
+                                className={`toggle-switch ${isAnnual ? 'annual' : ''}`}
+                                onClick={() => setIsAnnual(!isAnnual)}
+                                aria-label="Toggle billing period"
+                            >
+                                <span className="toggle-knob"></span>
+                            </button>
+                            <span className={`toggle-label ${isAnnual ? 'active' : ''}`}>
+                                Annual
+                                <span className="toggle-discount">-23%</span>
+                            </span>
                         </div>
 
-                        <button
-                            onClick={handleSubscribe}
-                            className="btn btn-primary btn-full"
-                        >
-                            Subscribe Now
-                        </button>
+                        <div className="pricing-card-single">
+                            <div className="plan-badge">CariSEO Plan</div>
+                            <div className="pricing-price">
+                                <span className="currency">RM</span>
+                                <span className="amount">{isAnnual ? '99' : '129'}</span>
+                                <span className="period">/month</span>
+                            </div>
+                            {isAnnual && (
+                                <p className="pricing-billed-note">Billed annually at RM1,188/year</p>
+                            )}
+                            <p className="pricing-sst">*Price excludes SST</p>
+                            <p className="pricing-tagline">Perfect for SMEs & startups ready to dominate search rankings</p>
+
+                            <ul className="pricing-features">
+                                {features.map((feature, i) => (
+                                    <li key={i}>
+                                        <span className="icon">✓</span>
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <div className="guarantee-badge">
+                                <span className="guarantee-icon">🛡️</span>
+                                <span>100% Managed by Our Team<br />No technical skills required</span>
+                            </div>
+
+                            <button
+                                onClick={handleSubscribe}
+                                className="btn btn-primary btn-full"
+                            >
+                                {isAnnual ? 'Subscribe Annually' : 'Subscribe Monthly'}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

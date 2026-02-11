@@ -67,6 +67,117 @@
 }
 
 /* Single Pricing Card */
+.pricing-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+/* Billing Toggle - HelpScout Style */
+.billing-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-full);
+    padding: 6px 20px;
+}
+
+.toggle-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toggle-label.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.toggle-discount {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--text-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+}
+
+.toggle-switch {
+    width: 48px;
+    height: 26px;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.toggle-switch.annual {
+    background: var(--gold);
+    border-color: var(--gold-dark);
+}
+
+.toggle-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.annual .toggle-knob {
+    transform: translateX(22px);
+}
+
+/* Promo Code Badge */
+.promo-code-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px dashed rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-md);
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.promo-code-badge strong {
+    color: #6366f1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.promo-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Billed annually note */
+.pricing-billed-note {
+    font-size: 0.85rem;
+    color: #6366f1;
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+}
+
 .pricing-card-single {
     background: rgba(255, 255, 255, 0.95);
     border-radius: var(--radius-xl);
@@ -541,5 +652,17 @@
 
     .pricing-card-single .pricing-price .amount {
         font-size: 2.75rem;
+    }
+
+    .billing-toggle {
+        padding: 5px 14px;
+    }
+
+    .toggle-label {
+        font-size: 0.8rem;
+    }
+
+    .promo-code-badge {
+        font-size: 0.8rem;
     }
 }
