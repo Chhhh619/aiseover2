@@ -1,5 +1,9 @@
 .section-problem {
-    background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -16,7 +20,11 @@
     gap: var(--space-md);
     padding: var(--space-sm) 0;
     font-size: 1.125rem;
-    color: var(--text-dark);
+    color: var(--text-light);
+}
+
+.section-problem .section-title {
+    color: var(--text-white);
 }
 
 .problem-icon {
@@ -36,18 +44,18 @@
 .problem-closing {
     text-align: center;
     padding-top: var(--space-lg);
-    border-top: 1px solid rgba(59, 130, 246, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .problem-closing p {
     font-size: 1.25rem;
-    color: var(--text-dark);
+    color: var(--text-light);
     line-height: 1.6;
     margin-bottom: var(--space-xs);
 }
 
 .problem-closing strong {
-    color: #2563eb;
+    color: var(--gold);
     font-weight: 700;
 }
 

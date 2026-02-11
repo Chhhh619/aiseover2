@@ -1,0 +1,202 @@
+.collab {
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient glow effects */
+.collab-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.collab-glow-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(253, 206, 114, 0.08) 0%, transparent 70%);
+    top: 10%;
+    left: -10%;
+}
+
+.collab-glow-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.06) 0%, transparent 70%);
+    bottom: 5%;
+    right: -8%;
+}
+
+.collab-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: var(--space-3xl) 0 var(--space-md);
+    flex-shrink: 0;
+}
+
+/* Partnership image container */
+.collab-image-container {
+    width: 100vw;
+    flex: 1;
+    position: relative;
+    min-height: 50vh;
+}
+
+.collab-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/mampu_x_dattel.png') no-repeat center center;
+    background-size: contain;
+}
+
+.collab-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: var(--radius-full);
+    color: #2563eb;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.collab-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.collab-subtitle {
+    font-size: 1.4rem;
+    color: #64748b;
+    max-width: 800px;
+    line-height: 1.6;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.collab-subtitle strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.collab-subtitle .mampu-ai-yellow {
+    color: #fdce72;
+    font-weight: 700;
+}
+
+.collab-subtitle .mampu-highlight {
+    color: #d4a84b;
+    font-weight: 600;
+}
+
+.collab-subtitle .dattel-highlight {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+/* Partnership image */
+.collab-logo {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: var(--space-xl);
+}
+
+/* Logo partnership layout */
+.collab-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    padding: var(--space-2xl) var(--space-3xl);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-2xl);
+}
+
+.collab-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collab-logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.collab-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    border: 1px solid #cbd5e1;
+    flex-shrink: 0;
+}
+
+.connector-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #475569;
+    line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .collab {
+        padding: 0;
+        min-height: auto;
+    }
+
+    .collab-content {
+        padding: var(--space-lg) var(--space-md) 0;
+    }
+
+    .collab-title {
+        font-size: 1.75rem;
+    }
+
+    .collab-subtitle {
+        font-size: 1rem;
+        white-space: normal;
+    }
+
+    .collab-image-container {
+        min-height: 450px;
+        width: 100%;
+    }
+
+    .collab-image-bg {
+        background-size: contain;
+        background-position: center center;
+    }
+}

@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Collab from './components/Collab'
 import Problem from './components/Problem'
 import Solution from './components/Solution'
 import HowItWorks from './components/HowItWorks'
@@ -29,6 +30,7 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <Collab />
       <Problem />
       <Solution />
       <Clients />

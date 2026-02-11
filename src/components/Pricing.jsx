@@ -62,7 +62,7 @@ function Pricing() {
                         <div className="plan-badge">CariSEO Plan</div>
                         <div className="pricing-price">
                             <span className="currency">RM</span>
-                            <span className="amount">99</span>
+                            <span className="amount">129</span>
                             <span className="period">/month</span>
                         </div>
                         <p className="pricing-sst">*Price excludes SST</p>

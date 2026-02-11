@@ -19,7 +19,7 @@ function Problem() {
     return (
         <section className="section section-problem" id="problem">
             <div className="container container-narrow">
-                <h2 className="section-title section-title-dark">
+                <h2 className="section-title">
                     Why ranking on Google alone is no longer enough
                 </h2>
 
