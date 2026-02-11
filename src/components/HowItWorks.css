@@ -42,11 +42,11 @@
     background: #79bad8;
     border: none;
     border-radius: var(--radius-xl);
-    padding: var(--space-2xl);
+    padding: var(--space-2xl) var(--space-2xl) var(--space-xl);
     text-align: center;
-    width: 700px;
+    width: 850px;
     max-width: 100%;
-    height: 280px;
+    min-height: 350px;
     margin: 0 auto;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
     user-select: none;
@@ -151,8 +151,9 @@
 .tab-description {
     font-size: clamp(0.9rem, 2vw, 1.125rem);
     color: rgba(255, 255, 255, 0.9);
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .swipe-hint {
@@ -194,7 +195,7 @@
     .tab-content {
         padding: var(--space-lg);
         margin: 0 var(--space-sm);
-        height: 260px;
+        min-height: 300px;
     }
 
     .tab-icon {

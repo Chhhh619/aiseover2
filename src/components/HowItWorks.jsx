@@ -20,29 +20,29 @@ function HowItWorks() {
 
     const steps = [
         {
-            title: 'We study what your customers search',
-            description: 'AI analyzes real Google searches related to your business.',
-            icon: '🔍'
+            title: 'Provide Your URL',
+            description: 'Share your website link so our AI can analyze your brand, services, audience, and existing content.',
+            icon: '🔗'
         },
         {
-            title: 'We design content Google wants to rank',
-            description: 'Clear structure based on proven ranking patterns.',
-            icon: '📐'
+            title: 'Provide Your Domain Access',
+            description: 'Grant limited CMS access to enable automated publishing and on-page SEO optimization.',
+            icon: '🔑'
         },
         {
-            title: 'AI creates content fast and consistently',
-            description: 'High-quality drafts without delays.',
+            title: 'Provide Your Target Keywords',
+            description: 'Submit your target keywords, or let our AI recommend high-potential keywords for your industry.',
+            icon: '🎯'
+        },
+        {
+            title: 'AI Generates & Publishes Articles Automatically',
+            description: 'Our system creates SEO-optimized content, applies proper structure and internal linking, and publishes directly to your website.',
             icon: '🤖'
         },
         {
-            title: 'Humans refine for trust and clarity',
-            description: 'Real examples, clear messaging, business logic.',
-            icon: '✍️'
-        },
-        {
-            title: "Built for Google's AI-powered search",
-            description: 'Content structured for modern search behavior.',
-            icon: '⚡'
+            title: 'Continuous Website Analytics & Reporting',
+            description: 'Track rankings, traffic, engagement, and conversions through structured performance reports.',
+            icon: '📊'
         }
     ]
 
