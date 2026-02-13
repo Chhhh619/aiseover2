@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getArticleCount, subscribeToArticleChanges } from '../lib/supabase'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import './Hero.css'
 
 // Animated digit component with smooth linear transition
@@ -108,6 +109,9 @@ function Hero() {
         document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
     }
 
+    const { ref: contentRef, isVisible: contentVisible } = useScrollReveal({ threshold: 0.1, rootMargin: '0px' })
+    const { ref: visualRef, isVisible: visualVisible } = useScrollReveal({ threshold: 0.1, rootMargin: '0px' })
+
     return (
         <section className="hero" id="hero">
             {/* Background Elements */}
@@ -124,7 +128,7 @@ function Hero() {
             <div className="container">
                 <div className="hero-grid">
                     {/* Left Column - Text Content */}
-                    <div className="hero-content">
+                    <div className={`hero-content reveal reveal-left ${contentVisible ? 'revealed' : ''}`} ref={contentRef}>
                         <h1 className="hero-title">
                             AI <span className="highlight">SEO</span> That Helps Your Business Get Found and Get Leads
                         </h1>
@@ -144,7 +148,7 @@ function Hero() {
                     </div>
 
                     {/* Right Column - Visual */}
-                    <div className="hero-visual">
+                    <div className={`hero-visual reveal reveal-right reveal-delay-2 ${visualVisible ? 'revealed' : ''}`} ref={visualRef}>
                         <div className="hero-metrics-card">
                             <div className="metrics-status">
                                 <span className="status-indicator"></span>

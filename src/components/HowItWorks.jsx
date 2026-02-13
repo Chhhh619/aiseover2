@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import './HowItWorks.css'
 
 function HowItWorks() {
@@ -101,14 +102,17 @@ function HowItWorks() {
         setIsDragging(false)
     }
 
+    const { ref: titleRef, isVisible: titleVisible } = useScrollReveal({ threshold: 0.2 })
+    const { ref: contentRef, isVisible: contentVisible } = useScrollReveal({ threshold: 0.1 })
+
     return (
         <section className="section section-light" id="how-it-works">
             <div className="container">
-                <h2 className="section-title section-title-dark">How It Works</h2>
-                <p className="section-subtitle" style={{ color: 'var(--text-body)' }}>Our AI-powered process in 5 simple steps</p>
+                <h2 className={`section-title section-title-dark reveal reveal-up ${titleVisible ? 'revealed' : ''}`} ref={titleRef}>How It Works</h2>
+                <p className={`section-subtitle reveal reveal-up reveal-delay-1 ${titleVisible ? 'revealed' : ''}`} style={{ color: 'var(--text-body)' }}>Our AI-powered process in 5 simple steps</p>
 
                 {/* Tab Navigation - Cleverus Style */}
-                <div className="tabs-nav">
+                <div className={`tabs-nav reveal reveal-up reveal-delay-2 ${contentVisible ? 'revealed' : ''}`} ref={contentRef}>
                     {steps.map((step, index) => (
                         <button
                             key={index}

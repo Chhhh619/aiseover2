@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import './Pricing.css'
 
 const STRIPE_MONTHLY = 'https://buy.stripe.com/6oU7sL1VS0V84Idf9bcV213'
@@ -27,6 +28,9 @@ function Pricing() {
         window.open(isAnnual ? STRIPE_ANNUAL : STRIPE_MONTHLY, '_blank')
     }
 
+    const { ref: leftRef, isVisible: leftVisible } = useScrollReveal({ threshold: 0.2 })
+    const { ref: rightRef, isVisible: rightVisible } = useScrollReveal({ threshold: 0.15 })
+
     return (
         <section className="section section-dark" id="pricing" style={{ background: 'linear-gradient(180deg, #1e293b 0%, #0f172a 100%)', position: 'relative', overflow: 'hidden' }}>
             {/* Decorative Shapes */}
@@ -38,7 +42,7 @@ function Pricing() {
             <div className="container" style={{ position: 'relative', zIndex: 5 }}>
                 <div className="pricing-layout">
                     {/* Left Side - Hook & Text */}
-                    <div className="pricing-hook">
+                    <div className={`pricing-hook reveal reveal-left ${leftVisible ? 'revealed' : ''}`} ref={leftRef}>
                         <span className="pricing-label">Our Pricing</span>
                         <h2 className="pricing-headline">Affordable SEO,<br />Powerful Results.</h2>
                         <p className="pricing-description">
@@ -62,7 +66,7 @@ function Pricing() {
                     </div>
 
                     {/* Right Side - Pricing Card with Toggle */}
-                    <div className="pricing-card-wrapper">
+                    <div className={`pricing-card-wrapper reveal reveal-right ${rightVisible ? 'revealed' : ''}`} ref={rightRef}>
                         {/* Billing Toggle */}
                         <div className="billing-toggle">
                             <span className={`toggle-label ${!isAnnual ? 'active' : ''}`}>Monthly</span>

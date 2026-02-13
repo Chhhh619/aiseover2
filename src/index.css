@@ -717,6 +717,83 @@ textarea {
   animation: glow 3s infinite ease-in-out;
 }
 
+/* ===================================
+   SCROLL REVEAL ANIMATIONS
+   =================================== */
+
+/* Base state for all scroll-reveal elements - hidden before entering viewport */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Fade up - elements slide up into view */
+.reveal-up {
+  transform: translateY(60px);
+}
+
+/* Fade down - elements slide down into view */
+.reveal-down {
+  transform: translateY(-60px);
+}
+
+/* Slide from left */
+.reveal-left {
+  transform: translateX(-80px);
+}
+
+/* Slide from right */
+.reveal-right {
+  transform: translateX(80px);
+}
+
+/* Pop/scale up - elements grow from small to full size */
+.reveal-pop {
+  transform: scale(0.85);
+}
+
+/* Fade in only (no movement) */
+.reveal-fade {
+  transform: none;
+}
+
+/* Visible state - applied when element enters viewport */
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger delays for child elements */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+.reveal-delay-7 { transition-delay: 0.7s; }
+.reveal-delay-8 { transition-delay: 0.8s; }
+
+/* Faster/shorter animation variant */
+.reveal-fast {
+  transition-duration: 0.5s;
+}
+
+/* Slower/longer animation variant */
+.reveal-slow {
+  transition-duration: 1.2s;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;

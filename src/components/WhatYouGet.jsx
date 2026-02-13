@@ -1,3 +1,4 @@
+import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal'
 import './WhatYouGet.css'
 
 function WhatYouGet() {
@@ -34,13 +35,20 @@ function WhatYouGet() {
         }
     ]
 
+    const { ref: titleRef, isVisible: titleVisible } = useScrollReveal({ threshold: 0.3 })
+    const { setRef, visibleItems } = useStaggerReveal(items.length)
+
     return (
         <section className="section section-light" id="whatyouget">
             <div className="container">
-                <h2 className="section-title section-title-dark">What's Included</h2>
+                <h2 className={`section-title section-title-dark reveal reveal-up ${titleVisible ? 'revealed' : ''}`} ref={titleRef}>What's Included</h2>
                 <div className="wyg-cards-grid">
                     {items.map((item, index) => (
-                        <div key={index} className="wyg-card">
+                        <div
+                            key={index}
+                            className={`wyg-card reveal reveal-pop reveal-delay-${index + 1} ${visibleItems.has(index) ? 'revealed' : ''}`}
+                            ref={setRef(index)}
+                        >
                             <div className="wyg-card-content">
                                 <h3 className="wyg-card-title">{item.title}</h3>
                                 <p className="wyg-card-description">{item.description}</p>

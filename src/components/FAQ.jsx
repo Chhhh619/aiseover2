@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal'
 import './FAQ.css'
 
 function FAQ() {
@@ -43,13 +44,20 @@ function FAQ() {
         setOpenIndex(openIndex === index ? null : index)
     }
 
+    const { ref: titleRef, isVisible: titleVisible } = useScrollReveal({ threshold: 0.3 })
+    const { setRef, visibleItems } = useStaggerReveal(faqs.length)
+
     return (
         <section className="section section-light" id="faq">
             <div className="container container-narrow">
-                <h2 className="section-title section-title-dark">Frequently Asked Questions</h2>
+                <h2 className={`section-title section-title-dark reveal reveal-up ${titleVisible ? 'revealed' : ''}`} ref={titleRef}>Frequently Asked Questions</h2>
                 <div className="faq-list">
                     {faqs.map((faq, index) => (
-                        <div key={index} className={`faq-item ${openIndex === index ? 'active' : ''}`}>
+                        <div
+                            key={index}
+                            className={`faq-item ${openIndex === index ? 'active' : ''} reveal reveal-up reveal-delay-${Math.min(index + 1, 8)} ${visibleItems.has(index) ? 'revealed' : ''}`}
+                            ref={setRef(index)}
+                        >
                             <button className="faq-question" onClick={() => toggle(index)}>
                                 <span>{faq.question}</span>
                                 <span className="faq-icon">{openIndex === index ? '−' : '+'}</span>

@@ -1,3 +1,4 @@
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import './Solution.css'
 
 function Solution() {
@@ -6,6 +7,9 @@ function Solution() {
         'Drive qualified traffic from AI platforms',
         'Future-proof your SEO strategy'
     ]
+
+    const { ref: leftRef, isVisible: leftVisible } = useScrollReveal({ threshold: 0.2 })
+    const { ref: rightRef, isVisible: rightVisible } = useScrollReveal({ threshold: 0.2 })
 
     const scrollToPricing = () => {
         document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
@@ -16,7 +20,7 @@ function Solution() {
             <div className="container">
                 <div className="solution-grid">
                     {/* Left Column - Text */}
-                    <div className="solution-content">
+                    <div className={`solution-content reveal reveal-left ${leftVisible ? 'revealed' : ''}`} ref={leftRef}>
                         <h2 className="solution-title">
                             Cari<span className="seo-highlight">SEO</span> helps you get found where your customers are searching
                         </h2>
@@ -47,7 +51,7 @@ function Solution() {
                     </div>
 
                     {/* Right Column - Enhanced Image Display */}
-                    <div className="solution-visual">
+                    <div className={`solution-visual reveal reveal-right ${rightVisible ? 'revealed' : ''}`} ref={rightRef}>
                         <div className="solution-image-container">
                             {/* Decorative elements */}
                             <div className="image-glow"></div>

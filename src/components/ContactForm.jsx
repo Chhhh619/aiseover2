@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { submitContactForm } from '../lib/supabase'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import './ContactForm.css'
 
 function ContactForm() {
@@ -51,11 +52,13 @@ function ContactForm() {
         }
     }
 
+    const { ref: sectionRef, isVisible: sectionVisible } = useScrollReveal({ threshold: 0.1 })
+
     return (
-        <div className="contact-wrapper" id="consultation-section">
+        <div className="contact-wrapper" id="consultation-section" ref={sectionRef}>
             <div className="container container-narrow">
-                <h2 className="section-title section-title-white">Ready to start your AI <span className="seo-highlight">SEO</span> journey?</h2>
-                <p className="section-subtitle">
+                <h2 className={`section-title section-title-white reveal reveal-up ${sectionVisible ? 'revealed' : ''}`}>Ready to start your AI <span className="seo-highlight">SEO</span> journey?</h2>
+                <p className={`section-subtitle reveal reveal-up reveal-delay-1 ${sectionVisible ? 'revealed' : ''}`}>
                     We review your website and show how AI SEO can help.
                 </p>
 
