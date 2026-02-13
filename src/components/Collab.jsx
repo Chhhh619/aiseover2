@@ -10,7 +10,7 @@ function Collab() {
                         Powered by Industry Leaders
                     </h2>
                     <p className="collab-subtitle">
-                        An initiative co-developed by <strong>Mampu<span className="mampu-ai-yellow">AI</span></strong> and <strong className="dattel-highlight">Dattel Asia Group</strong>
+                        An initiative co-developed by <strong>MampuAI</strong> and <strong className="dattel-highlight">Dattel Asia Group</strong>
                     </p>
                 </div>
             </div>
