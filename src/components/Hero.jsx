@@ -86,8 +86,11 @@ function Hero() {
         fetchCount()
 
         // Subscribe to real-time inserts - increment count when new articles are created
-        const unsubscribe = subscribeToArticleChanges(() => {
-            setActualCount(prev => prev + 1)
+        const unsubscribe = subscribeToArticleChanges(async () => {
+            const { count: latestCount } = await getArticleCount()
+            if (Number.isFinite(latestCount)) {
+                setActualCount(latestCount)
+            }
         })
 
         return () => unsubscribe()

@@ -49,13 +49,14 @@ export async function getArticleCount() {
         const { count, error } = await supabase
             .from('generated_articles')
             .select('*', { count: 'exact', head: true })
+            .eq('generation_status', 'published')
 
         if (error) {
             console.error('Supabase error:', error)
             return { count: 0, error: error.message }
         }
 
-        return { count: count || 0 }
+        return { count: count ?? 0 }
     } catch (err) {
         console.error('Get article count error:', err)
         return { count: 0, error: err.message }
