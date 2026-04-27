@@ -10,7 +10,7 @@ function Pricing() {
 
     const features = [
         '1 Website URL',
-        'Up to 5 Target Keywords + 5 keywords (promo period ends 1 March 2026)',
+        'Up to 5 Target Keywords + 5 keywords',
         '15 English Articles per Month',
         'Minimum 700 words per article',
         'AI-Assisted SEO Content Deployment at Scale',
