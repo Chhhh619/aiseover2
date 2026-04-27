@@ -11,17 +11,17 @@ function Pricing() {
     const features = [
         '1 Website URL',
         'Up to 5 Target Keywords + 5 keywords (promo period ends 1 March 2026)',
-        '30 English Articles per Month',
+        '15 English Articles per Month',
         'Minimum 700 words per article',
         'AI-Assisted SEO Content Deployment at Scale',
         'Programmatic SEO Structure with Internal Linking',
         <>Articles Published <strong>Directly Under Your Website Domain</strong></>,
-        'Full On-Page SEO Optimization',
+        // 'Full On-Page SEO Optimization',
         'Built for Google and LLM Search Visibility',
         'Advanced Keyword Research',
-        'LLM AI Search Optimization',
+        // 'LLM AI Search Optimization',
         'Weekly SEO Ranking Reports',
-        'Monthly Keyword Performance Report'
+        // 'Monthly Keyword Performance Report'
     ]
 
     const handleSubscribe = () => {
